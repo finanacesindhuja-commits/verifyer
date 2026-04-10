@@ -1,0 +1,1093 @@
+Starting server at 2026-03-25T19:22:10.024Z
+[2026-03-25T19:22:10.108Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-25T19:22:50.499Z ---
+[2026-03-25T19:22:50.603Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-25T19:22:58.854Z ---
+[2026-03-25T19:22:58.938Z] Backend server running on port 5006
+[2026-03-25T19:22:58.939Z] Failed to start server: listen EADDRINUSE: address already in use 0.0.0.0:5006
+[2026-03-25T19:23:12.330Z] GET /api/loans
+[2026-03-25T19:23:13.590Z] GET /api/loans
+[2026-03-25T19:23:26.224Z] POST /api/loans/2/verify
+[2026-03-25T19:23:26.548Z] Error in verification for loan 2: permission denied for table verifications
+[2026-03-25T19:23:54.395Z] POST /api/loans/2/verify
+[2026-03-25T19:23:54.763Z] Error in verification for loan 2: permission denied for table verifications
+
+--- Starting server at 2026-03-25T19:24:37.292Z ---
+[2026-03-25T19:24:37.372Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-25T19:24:46.710Z ---
+[2026-03-25T19:24:46.791Z] Backend server running on port 5006
+[2026-03-25T19:24:46.793Z] Failed to start server: listen EADDRINUSE: address already in use 0.0.0.0:5006
+
+--- Starting server at 2026-03-25T19:25:00.841Z ---
+[2026-03-25T19:25:00.931Z] Backend server running on port 5006
+[2026-03-25T19:25:04.679Z] POST /api/loans/2/verify
+[2026-03-25T19:25:05.196Z] Error in verification for loan 2: permission denied for table verifications
+
+--- Starting server at 2026-03-25T19:26:05.779Z ---
+[2026-03-25T19:26:05.867Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-25T19:34:07.250Z ---
+[2026-03-25T19:34:07.360Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-25T19:34:16.537Z ---
+[2026-03-25T19:34:16.627Z] Backend server running on port 5006
+[2026-03-25T19:34:16.629Z] Failed to start server: listen EADDRINUSE: address already in use 0.0.0.0:5006
+
+--- Starting server at 2026-03-25T19:53:00.485Z ---
+[2026-03-25T19:53:00.598Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-25T20:02:08.893Z ---
+[2026-03-25T20:02:08.957Z] Backend server running on port 5006
+[2026-03-25T20:02:11.916Z] POST /staff/login
+[2026-03-25T20:02:12.348Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-25T20:02:12.406Z] GET /api/loans
+[2026-03-25T20:02:12.540Z] GET /api/loans
+[2026-03-25T20:02:16.808Z] GET /api/loans
+[2026-03-25T20:02:16.989Z] GET /api/loans
+[2026-03-25T20:02:26.527Z] POST /api/loans/2/verify
+[2026-03-25T20:02:26.529Z] Attempting to update loan 2 status to Approved in 'loans' table...
+[2026-03-25T20:02:26.866Z] Update success for loan 2: [{"id":2,"member_id":null,"center_id":2,"status":"APPROVED","member_cibil":"768","person_name":"Hjfhg","date_of_birth":"1986-08-07","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"987965789098","member_work":"Jgjh","annual_income":7567676,"nominee_name":"Fxfghjk","nominee_dob":"1986-05-06","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"L;koiuhgv","mobile_no":"7865678976","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104068318-cropped.jpg","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104069649-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104069852-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104070122-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104070329-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104070750-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104071021-cropped.jpg","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104071198-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774104071457-cropped.jpg","created_at":"2026-03-21T14:41:12.057453+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Hjfhg"}]
+[2026-03-25T20:02:31.199Z] GET /api/loans
+[2026-03-25T20:02:31.458Z] GET /api/loans
+[2026-03-25T20:12:31.893Z] GET /api/loans
+[2026-03-25T20:12:34.234Z] GET /api/loans
+[2026-03-25T20:14:38.986Z] GET /api/loans
+[2026-03-25T20:14:39.840Z] GET /api/loans
+
+--- Starting server at 2026-03-25T20:51:43.381Z ---
+[2026-03-25T20:51:43.520Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-26T03:10:14.832Z ---
+[2026-03-26T03:10:14.946Z] Backend server running on port 5006
+[2026-03-26T03:12:43.710Z] GET /api/loans
+[2026-03-26T03:12:44.267Z] GET /api/loans
+[2026-03-26T09:25:14.415Z] GET /api/loans
+[2026-03-26T09:25:15.068Z] GET /api/loans
+[2026-03-26T09:37:48.512Z] GET /api/loans
+[2026-03-26T09:37:48.948Z] GET /api/loans
+[2026-03-26T09:37:58.063Z] GET /api/loans
+[2026-03-26T09:37:58.381Z] GET /api/loans
+[2026-03-26T09:38:18.220Z] POST /api/loans/3/verify
+[2026-03-26T09:38:18.222Z] Attempting to update loan 3 status to Approved in 'loans' table...
+[2026-03-26T09:38:18.680Z] Update success for loan 3: [{"id":3,"member_id":2,"center_id":2,"status":"APPROVED","member_cibil":"342","person_name":"Hjfhg","date_of_birth":"1986-04-02","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"123456523467","member_work":"Ergrg","annual_income":45345435,"nominee_name":"Gdsg","nominee_dob":"1987-12-23","nominee_gender":"Male","nominee_religion":"Muslim","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Fgdfg","mobile_no":"7865678976","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468758755-cropped.jpg","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468759655-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468759824-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468759992-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468760168-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468760587-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468760760-cropped.jpg","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468760952-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774468761111-cropped.jpg","created_at":"2026-03-25T19:59:21.834798+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Hjfhg","verifier_id":"STF002","verified_at":"2026-03-26T09:38:18.223+00:00","verification_remarks":"good report"}]
+[2026-03-26T09:38:21.191Z] GET /api/loans
+[2026-03-26T09:38:21.307Z] GET /api/loans
+
+--- Starting server at 2026-03-28T18:32:33.948Z ---
+[2026-03-28T18:32:34.019Z] Backend server running on port 5006
+[2026-03-28T18:32:58.112Z] POST /staff/login
+[2026-03-28T18:32:58.500Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-28T18:33:16.534Z] POST /staff/login
+[2026-03-28T18:33:16.950Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-28T18:35:25.341Z] POST /staff/login
+[2026-03-28T18:35:25.677Z] Login SUCCESS for STF002 (Verifier)
+
+--- Starting server at 2026-03-28T18:36:12.506Z ---
+[2026-03-28T18:36:12.560Z] Backend server running on port 5006
+[2026-03-28T18:36:28.506Z] POST /staff/login
+[2026-03-28T18:36:28.986Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-28T18:36:29.088Z] GET /api/loans
+[2026-03-28T18:36:29.259Z] GET /api/loans
+[2026-03-28T18:36:42.623Z] GET /api/loans
+[2026-03-28T18:36:42.936Z] GET /api/loans
+[2026-03-28T18:36:47.137Z] GET /api/loans
+[2026-03-28T18:36:47.378Z] GET /api/loans
+[2026-03-28T18:57:33.726Z] GET /api/loans
+[2026-03-28T18:57:34.065Z] GET /api/loans
+[2026-03-28T18:57:34.166Z] GET /api/loans
+[2026-03-28T19:10:01.017Z] POST /api/loans/4/verify
+[2026-03-28T19:10:01.027Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:10:01.435Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517788816-cropped.jpg","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790411-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791243-cropped.jpg","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:10:01.03+00:00","verification_remarks":"[QUERY:member_aadhaar_front_url] Document is not clear"}]
+[2026-03-28T19:10:05.086Z] GET /api/loans
+[2026-03-28T19:10:05.269Z] GET /api/loans
+[2026-03-28T19:10:09.518Z] GET /api/loans
+[2026-03-28T19:10:09.767Z] GET /api/loans
+[2026-03-28T19:12:28.659Z] GET /api/loans
+[2026-03-28T19:12:28.965Z] GET /api/loans
+[2026-03-28T19:13:13.019Z] POST /api/loans/4/verify
+[2026-03-28T19:13:13.021Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:13:13.370Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790411-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791243-cropped.jpg","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:13:13.022+00:00","verification_remarks":"[QUERY:signature_url] [QUERY:signature_url] [QUERY:signature_url] [QUERY:signature_url] [QUERY:signature_url] [QUERY:nominee_aadhaar_back_url] [QUERY:member_aadhaar_back_url] [QUERY:member_aadhaar_front_url] Document is not clear"}]
+[2026-03-28T19:13:20.446Z] GET /api/loans
+[2026-03-28T19:13:20.809Z] GET /api/loans
+[2026-03-28T19:13:23.048Z] GET /api/loans
+[2026-03-28T19:13:23.171Z] GET /api/loans
+[2026-03-28T19:13:33.490Z] GET /api/loans
+[2026-03-28T19:13:34.256Z] GET /api/loans
+[2026-03-28T19:17:22.119Z] GET /api/loans
+[2026-03-28T19:17:22.439Z] GET /api/loans
+[2026-03-28T19:17:26.375Z] GET /api/loans
+[2026-03-28T19:17:26.494Z] GET /api/loans
+[2026-03-28T19:18:09.146Z] POST /api/loans/4/verify
+[2026-03-28T19:18:09.148Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:18:09.607Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790411-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:18:09.149+00:00","verification_remarks":"[QUERY:nominee_aadhaar_back_url] "}]
+[2026-03-28T19:18:16.444Z] GET /api/loans
+[2026-03-28T19:18:16.735Z] GET /api/loans
+[2026-03-28T19:18:18.259Z] GET /api/loans
+[2026-03-28T19:18:18.439Z] GET /api/loans
+[2026-03-28T19:19:15.442Z] GET /api/loans
+[2026-03-28T19:19:15.670Z] GET /api/loans
+[2026-03-28T19:21:27.397Z] GET /api/loans
+[2026-03-28T19:26:22.215Z] POST /api/loans/4/verify
+[2026-03-28T19:26:22.219Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:26:23.206Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725540638-1045_JULEGA.png","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:26:22.226+00:00","verification_remarks":"[QUERY:signature_url] Document is not clear"}]
+[2026-03-28T19:26:28.476Z] GET /api/loans
+[2026-03-28T19:26:28.813Z] GET /api/loans
+[2026-03-28T19:26:35.250Z] GET /api/loans
+[2026-03-28T19:26:35.514Z] GET /api/loans
+[2026-03-28T19:26:37.744Z] GET /api/loans
+[2026-03-28T19:26:37.868Z] GET /api/loans
+[2026-03-28T19:26:43.655Z] GET /api/loans
+[2026-03-28T19:26:43.890Z] GET /api/loans
+[2026-03-28T19:26:45.891Z] GET /api/loans
+[2026-03-28T19:26:46.016Z] GET /api/loans
+[2026-03-28T19:26:48.289Z] GET /api/loans
+[2026-03-28T19:26:48.429Z] GET /api/loans
+[2026-03-28T19:26:58.046Z] POST /api/loans/4/verify
+[2026-03-28T19:26:58.047Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:26:58.313Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725540638-1045_JULEGA.png","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:26:58.049+00:00","verification_remarks":"[QUERY:nominee_aadhaar_back_url] Document is not clear Document is not clear"}]
+[2026-03-28T19:27:00.359Z] GET /api/loans
+[2026-03-28T19:27:00.492Z] GET /api/loans
+[2026-03-28T19:27:02.075Z] GET /api/loans
+[2026-03-28T19:27:02.185Z] GET /api/loans
+[2026-03-28T19:28:31.522Z] GET /api/loans
+[2026-03-28T19:28:32.161Z] GET /api/loans
+[2026-03-28T19:28:36.965Z] POST /api/loans/4/verify
+[2026-03-28T19:28:36.966Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:28:37.239Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725540638-1045_JULEGA.png","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:28:36.968+00:00","verification_remarks":"[QUERY:nominee_aadhaar_back_url] Document is not clear Document is not clear Document is not clear"}]
+[2026-03-28T19:28:40.162Z] GET /api/loans
+[2026-03-28T19:28:40.289Z] GET /api/loans
+[2026-03-28T19:28:41.834Z] GET /api/loans
+[2026-03-28T19:28:41.920Z] GET /api/loans
+[2026-03-28T19:30:49.664Z] POST /api/loans/4/verify
+[2026-03-28T19:30:49.666Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:30:50.569Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725540638-1045_JULEGA.png","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:30:49.667+00:00","verification_remarks":"[QUERY:nominee_aadhaar_back_url] Document is not clear Document is not clear Document is not clear"}]
+[2026-03-28T19:30:58.549Z] POST /api/loans/4/verify
+[2026-03-28T19:30:58.552Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:30:58.860Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725540638-1045_JULEGA.png","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:30:58.554+00:00","verification_remarks":"[QUERY:nominee_aadhaar_front_url] [QUERY:nominee_aadhaar_back_url] Document is not clear Document is not clear Document is not clear"}]
+[2026-03-28T19:31:05.621Z] POST /api/loans/4/verify
+[2026-03-28T19:31:05.622Z] Attempting to update loan 4 status to Query in 'loans' table...
+[2026-03-28T19:31:05.897Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"QUERY","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725540638-1045_JULEGA.png","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-28T19:31:05.624+00:00","verification_remarks":"[QUERY:pan_card_url] [QUERY:nominee_aadhaar_front_url] [QUERY:nominee_aadhaar_back_url] Document is not clear Document is not clear Document is not clear"}]
+
+--- Starting server at 2026-03-28T19:32:35.184Z ---
+[2026-03-28T19:32:35.330Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-29T09:49:36.626Z ---
+[2026-03-29T09:49:36.731Z] Backend server running on port 5006
+[2026-03-29T09:50:13.156Z] POST /staff/login
+[2026-03-29T09:50:14.804Z] Login FAILED for STF001: Cannot coerce the result to a single JSON object
+[2026-03-29T09:50:32.301Z] POST /staff/login
+[2026-03-29T09:50:33.059Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-29T09:50:33.214Z] GET /api/loans
+[2026-03-29T09:50:33.462Z] GET /api/loans
+[2026-03-29T09:50:38.939Z] GET /api/verification-list
+[2026-03-29T09:50:38.947Z] GET /api/verification-list
+[2026-03-29T09:50:42.252Z] GET /api/loans
+[2026-03-29T09:50:42.724Z] GET /api/loans
+[2026-03-29T09:50:51.155Z] GET /api/loans
+[2026-03-29T09:50:52.764Z] GET /api/loans
+[2026-03-29T09:51:02.163Z] GET /api/verification-list
+[2026-03-29T09:51:02.168Z] GET /api/verification-list
+[2026-03-29T09:51:03.169Z] GET /api/loans
+[2026-03-29T09:51:03.535Z] GET /api/loans
+[2026-03-29T09:51:07.878Z] GET /api/loans
+[2026-03-29T09:51:08.226Z] GET /api/loans
+[2026-03-29T09:51:14.310Z] GET /api/loans
+[2026-03-29T09:51:14.727Z] GET /api/loans
+[2026-03-29T09:52:26.312Z] GET /api/verification-list
+[2026-03-29T09:52:26.317Z] GET /api/verification-list
+[2026-03-29T09:52:29.503Z] GET /api/loans
+[2026-03-29T09:52:30.463Z] GET /api/loans
+[2026-03-29T10:50:15.553Z] GET /api/loans
+[2026-03-29T10:50:16.084Z] GET /api/loans
+[2026-03-29T10:50:29.016Z] GET /api/loans
+[2026-03-29T10:50:29.398Z] GET /api/loans
+[2026-03-29T10:50:35.525Z] POST /api/loans/4/verify
+[2026-03-29T10:50:35.533Z] Attempting to update loan 4 status to Approved in 'loans' table...
+[2026-03-29T10:50:35.965Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"APPROVED","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725540638-1045_JULEGA.png","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-03-29T10:50:35.535+00:00","verification_remarks":"[QUERY:pan_card_url] [QUERY:nominee_aadhaar_front_url] [QUERY:nominee_aadhaar_back_url] Document is not clear Document is not clear Document is not clear"}]
+[2026-03-29T10:50:37.838Z] GET /api/loans
+[2026-03-29T10:50:38.006Z] GET /api/loans
+[2026-03-29T11:28:50.184Z] GET /api/loans
+[2026-03-29T11:28:50.855Z] GET /api/loans
+[2026-03-29T11:28:54.474Z] GET /api/verification-list
+[2026-03-29T11:28:54.482Z] GET /api/verification-list
+[2026-03-29T11:28:57.322Z] GET /api/verification-list
+[2026-03-29T11:28:57.328Z] GET /api/verification-list
+[2026-03-29T11:28:58.810Z] GET /api/verification-list
+[2026-03-29T11:28:58.821Z] GET /api/verification-list
+[2026-03-29T11:33:53.101Z] GET /api/centers
+[2026-03-29T11:33:53.165Z] GET /api/members/2
+[2026-03-29T11:34:19.889Z] GET /api/verification-list
+[2026-03-29T11:34:19.906Z] GET /api/verification-list
+[2026-03-29T11:34:25.330Z] GET /api/verification-list
+[2026-03-29T11:34:25.342Z] GET /api/verification-list
+[2026-03-29T11:34:26.248Z] GET /api/verification-list
+[2026-03-29T11:34:26.273Z] GET /api/verification-list
+[2026-03-29T11:34:26.610Z] GET /api/verification-list
+[2026-03-29T11:34:26.619Z] GET /api/verification-list
+
+--- Starting server at 2026-03-29T11:35:28.435Z ---
+[2026-03-29T11:35:28.559Z] Backend server running on port 5006
+[2026-03-29T11:35:45.863Z] GET /api/verification-list
+[2026-03-29T11:35:45.887Z] GET /api/verification-list
+[2026-03-29T11:35:52.938Z] GET /api/loans
+[2026-03-29T11:35:54.142Z] GET /api/loans
+[2026-03-29T11:35:57.956Z] GET /api/loans
+[2026-03-29T11:35:58.105Z] GET /api/loans
+[2026-03-29T11:36:00.326Z] GET /api/loans
+[2026-03-29T11:36:00.473Z] GET /api/loans
+
+--- Starting server at 2026-03-29T11:36:51.392Z ---
+[2026-03-29T11:36:51.571Z] Backend server running on port 5006
+[2026-03-29T11:37:15.095Z] GET /api/verification-list
+[2026-03-29T11:37:15.266Z] GET /api/verification-list
+[2026-03-29T11:39:24.062Z] GET /api/verification-list
+[2026-03-29T11:39:24.096Z] GET /api/verification-list
+[2026-03-29T11:39:26.352Z] GET /api/verification-list
+[2026-03-29T11:39:26.361Z] GET /api/verification-list
+[2026-03-29T11:39:27.385Z] GET /api/verification-list
+[2026-03-29T11:39:27.404Z] GET /api/verification-list
+[2026-03-29T11:39:39.324Z] GET /api/centers
+[2026-03-29T11:39:39.363Z] GET /api/centers
+[2026-03-29T11:40:09.575Z] POST /api/login
+[2026-03-29T11:40:58.220Z] POST /api/login
+[2026-03-29T11:45:46.957Z] GET /api/verification-list
+[2026-03-29T11:45:47.012Z] GET /api/verification-list
+[2026-03-29T11:45:49.757Z] GET /api/verification-list
+[2026-03-29T11:45:49.766Z] GET /api/verification-list
+[2026-03-29T11:45:50.810Z] GET /api/verification-list
+[2026-03-29T11:45:50.818Z] GET /api/verification-list
+[2026-03-29T11:45:51.051Z] GET /api/verification-list
+[2026-03-29T11:45:51.061Z] GET /api/verification-list
+[2026-03-29T11:45:51.972Z] GET /api/verification-list
+[2026-03-29T11:45:51.979Z] GET /api/verification-list
+[2026-03-29T11:45:52.247Z] GET /api/verification-list
+[2026-03-29T11:45:52.256Z] GET /api/verification-list
+[2026-03-29T11:45:53.107Z] GET /api/verification-list
+[2026-03-29T11:45:53.118Z] GET /api/verification-list
+[2026-03-29T11:45:53.321Z] GET /api/verification-list
+[2026-03-29T11:45:53.333Z] GET /api/verification-list
+[2026-03-29T11:45:54.245Z] GET /api/verification-list
+[2026-03-29T11:45:54.254Z] GET /api/verification-list
+[2026-03-29T11:45:54.482Z] GET /api/verification-list
+[2026-03-29T11:45:54.493Z] GET /api/verification-list
+[2026-03-29T11:45:55.567Z] GET /api/verification-list
+[2026-03-29T11:45:55.578Z] GET /api/verification-list
+[2026-03-29T11:45:55.780Z] GET /api/verification-list
+[2026-03-29T11:45:55.787Z] GET /api/verification-list
+[2026-03-29T11:47:12.285Z] GET /api/verification-list
+[2026-03-29T11:47:12.347Z] GET /api/verification-list
+
+--- Starting server at 2026-03-29T11:49:23.190Z ---
+[2026-03-29T11:49:23.499Z] Backend server running on port 5006
+[2026-03-29T11:50:47.953Z] GET /api/verification-list
+[2026-03-29T11:50:48.176Z] GET /api/verification-list
+[2026-03-29T11:50:50.737Z] GET /api/verification-list
+[2026-03-29T11:50:50.755Z] GET /api/verification-list
+[2026-03-29T11:51:01.560Z] GET /api/verification-list
+[2026-03-29T11:51:01.575Z] GET /api/verification-list
+
+--- Starting server at 2026-03-29T14:17:44.400Z ---
+[2026-03-29T14:17:44.472Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-29T14:18:21.869Z ---
+[2026-03-29T14:18:21.928Z] Backend server running on port 5006
+[2026-03-29T14:20:51.340Z] GET /api/verification-list
+[2026-03-29T14:20:51.472Z] GET /api/verification-list
+[2026-03-29T14:20:54.159Z] GET /api/verification-list
+[2026-03-29T14:20:54.173Z] GET /api/verification-list
+[2026-03-29T14:21:02.108Z] GET /api/verification-list
+[2026-03-29T14:21:02.126Z] GET /api/verification-list
+[2026-03-29T14:28:40.744Z] GET /api/verification-list
+[2026-03-29T14:28:40.772Z] GET /api/verification-list
+[2026-03-29T14:28:44.058Z] GET /api/loans
+[2026-03-29T14:28:45.062Z] GET /api/loans
+[2026-03-29T14:28:56.322Z] GET /api/verification-list
+[2026-03-29T14:28:56.327Z] GET /api/verification-list
+[2026-03-29T14:29:24.205Z] GET /api/verification-list
+[2026-03-29T14:29:24.211Z] GET /api/verification-list
+[2026-03-29T14:30:14.215Z] GET /api/verification-list
+[2026-03-29T14:30:14.392Z] GET /api/verification-list
+[2026-03-29T14:30:15.701Z] GET /api/verification-list
+[2026-03-29T14:30:15.710Z] GET /api/verification-list
+[2026-03-29T14:30:21.567Z] GET /api/verification-list
+[2026-03-29T14:30:21.576Z] GET /api/verification-list
+[2026-03-29T14:31:12.877Z] GET /api/verification-list
+[2026-03-29T14:31:12.938Z] GET /api/verification-list
+[2026-03-29T14:33:23.756Z] GET /api/verification-list
+[2026-03-29T14:33:23.811Z] GET /api/verification-list
+[2026-03-29T14:33:25.854Z] GET /api/verification-list
+[2026-03-29T14:33:25.864Z] GET /api/verification-list
+[2026-03-29T14:33:33.803Z] GET /api/verification-list
+[2026-03-29T14:33:33.813Z] GET /api/verification-list
+[2026-03-29T14:33:34.881Z] GET /api/loans
+[2026-03-29T14:33:36.128Z] GET /api/loans
+[2026-03-29T14:33:41.793Z] GET /api/loans
+[2026-03-29T14:33:42.222Z] GET /api/loans
+[2026-03-29T14:33:44.446Z] GET /api/verification-list
+[2026-03-29T14:33:44.453Z] GET /api/verification-list
+[2026-03-29T14:33:45.829Z] GET /api/loans
+[2026-03-29T14:33:45.982Z] GET /api/loans
+[2026-03-29T14:34:10.221Z] GET /api/verification-list
+[2026-03-29T14:34:10.226Z] GET /api/verification-list
+[2026-03-29T14:34:12.549Z] GET /api/verification-list
+[2026-03-29T14:34:12.555Z] GET /api/verification-list
+[2026-03-29T14:34:13.561Z] GET /api/verification-list
+[2026-03-29T14:34:13.567Z] GET /api/verification-list
+[2026-03-29T14:34:13.780Z] GET /api/verification-list
+[2026-03-29T14:34:13.785Z] GET /api/verification-list
+[2026-03-29T14:34:25.724Z] GET /api/loans
+[2026-03-29T14:34:26.103Z] GET /api/loans
+[2026-03-29T14:34:35.334Z] GET /api/loans
+[2026-03-29T14:34:35.682Z] GET /api/loans
+[2026-03-29T14:34:51.530Z] GET /api/verification-list
+[2026-03-29T14:34:51.534Z] GET /api/verification-list
+[2026-03-29T14:35:47.791Z] GET /api/verification-list
+[2026-03-29T14:35:47.806Z] GET /api/verification-list
+
+--- Starting server at 2026-03-29T14:39:42.377Z ---
+[2026-03-29T14:39:42.575Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-29T14:40:00.323Z ---
+[2026-03-29T14:40:00.429Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-29T14:40:46.186Z ---
+[2026-03-29T14:40:46.420Z] Backend server running on port 5006
+[2026-03-29T14:41:39.434Z] GET /api/verification-list
+[2026-03-29T14:41:40.752Z] GET /api/verification-list
+[2026-03-29T14:41:51.024Z] POST /api/approve-verification
+[2026-03-29T14:41:51.395Z] GET /api/verification-list
+[2026-03-29T14:41:54.330Z] POST /api/approve-verification
+[2026-03-29T14:41:54.541Z] GET /api/verification-list
+[2026-03-29T14:44:13.115Z] GET /api/verification-list
+[2026-03-29T14:44:13.827Z] GET /api/verification-list
+[2026-03-29T14:46:19.781Z] GET /api/verification-list
+[2026-03-29T14:46:21.365Z] GET /api/verification-list
+[2026-03-29T14:49:45.413Z] GET /api/verification-list
+[2026-03-29T14:49:46.844Z] GET /api/verification-list
+[2026-03-29T14:51:02.717Z] GET /api/loans
+[2026-03-29T14:51:03.086Z] GET /api/loans
+[2026-03-29T14:51:03.510Z] GET /api/verification-list
+[2026-03-29T14:51:03.939Z] GET /api/verification-list
+[2026-03-29T14:52:38.232Z] GET /api/verification-list
+[2026-03-29T15:07:54.317Z] GET /api/verification-list
+[2026-03-29T15:07:59.190Z] GET /api/verification-list
+[2026-03-29T15:10:56.563Z] GET /api/verification-list
+[2026-03-29T15:10:58.983Z] GET /api/verification-list
+[2026-03-29T15:15:57.822Z] GET /api/verification-list
+[2026-03-29T15:15:59.481Z] GET /api/verification-list
+
+--- Starting server at 2026-03-29T15:16:52.848Z ---
+[2026-03-29T15:16:53.061Z] Backend server running on port 5006
+
+--- Starting server at 2026-03-29T15:17:18.794Z ---
+[2026-03-29T15:17:18.860Z] Backend server running on port 5006
+[2026-03-29T15:18:02.898Z] GET /api/verification-list
+[2026-03-29T15:18:04.064Z] GET /api/verification-list
+
+--- Starting server at 2026-03-29T15:24:18.506Z ---
+[2026-03-29T15:24:18.616Z] Backend server running on port 5006
+[2026-03-29T15:26:10.569Z] GET /api/centers
+[2026-03-29T15:26:10.834Z] GET /api/members/2?timestamp=1774797970148
+[2026-03-29T15:26:13.480Z] GET /api/centers
+[2026-03-29T15:26:13.499Z] GET /api/members/2?timestamp=1774797973479
+[2026-03-29T15:26:13.506Z] GET /api/centers
+[2026-03-29T15:26:13.776Z] GET /api/members/2?timestamp=1774797973484
+[2026-03-29T15:26:20.372Z] GET /api/members/2?timestamp=1774797980364
+[2026-03-29T15:30:21.348Z] GET /api/centers
+[2026-03-29T15:30:21.673Z] GET /api/members/2?timestamp=1774798220941
+[2026-03-29T15:30:21.693Z] GET /api/centers
+[2026-03-29T15:30:21.710Z] GET /api/members/2?timestamp=1774798220948
+[2026-03-29T15:30:25.961Z] GET /api/members/2?timestamp=1774798225957
+
+--- Starting server at 2026-03-31T04:20:09.183Z ---
+[2026-03-31T04:20:09.229Z] Backend server running on port 5006
+[2026-03-31T04:20:51.228Z] POST /staff/login
+[2026-03-31T04:20:53.192Z] Login FAILED for STFOO2: Cannot coerce the result to a single JSON object
+[2026-03-31T04:21:04.759Z] POST /staff/login
+[2026-03-31T04:21:05.482Z] Login FAILED for STFOO2: Cannot coerce the result to a single JSON object
+[2026-03-31T04:21:18.646Z] POST /staff/login
+[2026-03-31T04:21:19.248Z] Login FAILED for STFOO2: Cannot coerce the result to a single JSON object
+[2026-03-31T04:22:41.913Z] POST /staff/login
+[2026-03-31T04:22:42.745Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T04:23:25.106Z] POST /staff/login
+[2026-03-31T04:23:25.623Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T04:23:25.657Z] GET /api/loans
+[2026-03-31T04:23:25.844Z] GET /api/loans
+[2026-03-31T04:23:32.746Z] GET /api/loans
+[2026-03-31T04:23:33.066Z] GET /api/loans
+[2026-03-31T04:23:36.345Z] GET /api/loans
+[2026-03-31T04:23:36.487Z] GET /api/loans
+[2026-03-31T04:23:38.494Z] GET /api/verification-list
+[2026-03-31T04:23:39.010Z] GET /api/verification-list
+[2026-03-31T04:23:40.942Z] GET /api/loans
+[2026-03-31T04:23:41.118Z] GET /api/loans
+[2026-03-31T04:23:41.972Z] GET /api/verification-list
+[2026-03-31T04:23:42.454Z] GET /api/verification-list
+[2026-03-31T04:27:51.822Z] POST /api/approve-verification
+[2026-03-31T04:27:52.616Z] GET /api/verification-list
+[2026-03-31T04:28:03.273Z] POST /api/approve-verification
+[2026-03-31T04:28:03.616Z] GET /api/verification-list
+[2026-03-31T04:28:12.172Z] GET /api/verification-list
+[2026-03-31T04:28:12.772Z] GET /api/verification-list
+[2026-03-31T04:59:01.017Z] GET /api/verification-list
+[2026-03-31T04:59:02.042Z] GET /api/verification-list
+[2026-03-31T04:59:23.537Z] GET /api/verification-list
+[2026-03-31T04:59:23.999Z] GET /api/verification-list
+[2026-03-31T05:15:53.521Z] GET /api/verification-list
+[2026-03-31T05:15:54.466Z] GET /api/verification-list
+[2026-03-31T05:16:38.246Z] GET /api/loans
+[2026-03-31T05:16:39.023Z] GET /api/loans
+[2026-03-31T05:16:41.072Z] GET /api/verification-list
+[2026-03-31T05:16:41.544Z] GET /api/verification-list
+[2026-03-31T05:28:53.457Z] GET /api/verification-list
+[2026-03-31T05:28:54.594Z] GET /api/verification-list
+[2026-03-31T05:29:05.354Z] GET /api/verification-list
+[2026-03-31T05:29:05.990Z] GET /api/verification-list
+
+--- Starting server at 2026-03-31T05:32:55.667Z ---
+[2026-03-31T05:32:55.725Z] Backend server running on port 5006
+[2026-03-31T05:33:11.219Z] GET /api/verification-list
+[2026-03-31T05:33:19.894Z] GET /api/verifier-link
+[2026-03-31T05:33:31.204Z] GET /api/verifier-link
+[2026-03-31T05:33:40.887Z] GET /api/verifier-link
+[2026-03-31T05:33:51.206Z] GET /api/verifier-link
+[2026-03-31T05:34:00.894Z] GET /api/verifier-link
+[2026-03-31T05:34:11.203Z] GET /api/verifier-link
+[2026-03-31T05:34:42.897Z] GET /api/verifier-link
+[2026-03-31T05:37:25.797Z] GET /api/verifier-link
+[2026-03-31T05:38:29.290Z] POST /api/update-verifier-link
+[2026-03-31T05:38:29.291Z] Verifier Link Updated: {"link":"Sugumar778","updatedAt":"2026-03-31T05:38:29.291Z"}
+[2026-03-31T05:38:45.724Z] POST /staff/login
+[2026-03-31T05:38:46.135Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T05:38:46.163Z] GET /api/loans
+[2026-03-31T05:38:46.482Z] GET /api/loans
+[2026-03-31T05:38:48.613Z] GET /api/verification-list
+[2026-03-31T05:38:49.021Z] GET /api/verification-list
+[2026-03-31T05:44:45.241Z] POST /api/update-verifier-link
+[2026-03-31T05:44:45.242Z] Verifier Link Updated: {"link":"Sugumar778","updatedAt":"2026-03-31T05:44:45.242Z"}
+[2026-03-31T05:44:56.325Z] POST /staff/login
+[2026-03-31T05:44:56.817Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T05:44:56.841Z] GET /api/loans
+[2026-03-31T05:44:57.041Z] GET /api/loans
+[2026-03-31T05:44:58.939Z] GET /api/verification-list
+[2026-03-31T05:44:59.402Z] GET /api/verification-list
+
+--- Starting server at 2026-03-31T05:49:02.041Z ---
+[2026-03-31T05:49:02.094Z] Main Verifier Backend running on port 5006
+[2026-03-31T06:03:06.327Z] POST /api/update-verifier-link
+[2026-03-31T06:03:10.960Z] GET /api/verification-list
+[2026-03-31T06:03:11.582Z] GET /api/verification-list
+[2026-03-31T06:17:16.839Z] POST /api/update-verifier-link
+[2026-03-31T06:17:16.849Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:17:16.848Z"}
+[2026-03-31T06:17:42.689Z] POST /api/update-verifier-link
+[2026-03-31T06:17:42.690Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:17:42.690Z"}
+[2026-03-31T06:25:04.707Z] POST /api/update-verifier-link
+[2026-03-31T06:25:04.711Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:25:04.711Z"}
+[2026-03-31T06:25:04.721Z] GET /api/verification-list
+[2026-03-31T06:25:04.784Z] POST /api/update-verifier-link
+[2026-03-31T06:25:04.785Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:25:04.785Z"}
+[2026-03-31T06:25:05.625Z] GET /api/verification-list
+[2026-03-31T06:25:17.037Z] GET /api/verification-list
+[2026-03-31T06:25:17.313Z] POST /api/update-verifier-link
+[2026-03-31T06:25:17.315Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:25:17.315Z"}
+[2026-03-31T06:25:17.320Z] POST /api/update-verifier-link
+[2026-03-31T06:25:17.321Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:25:17.321Z"}
+[2026-03-31T06:25:17.460Z] GET /api/verification-list
+[2026-03-31T06:29:17.613Z] GET /api/verification-list
+[2026-03-31T06:29:17.625Z] POST /api/update-verifier-link
+[2026-03-31T06:29:17.626Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:29:17.626Z"}
+[2026-03-31T06:29:17.630Z] POST /api/update-verifier-link
+[2026-03-31T06:29:17.632Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:29:17.632Z"}
+[2026-03-31T06:29:18.773Z] GET /api/verification-list
+[2026-03-31T06:29:39.509Z] POST /api/update-verifier-link
+[2026-03-31T06:29:39.510Z] Verifier Link Updated: {"link":"sugu","updatedAt":"2026-03-31T06:29:39.510Z"}
+[2026-03-31T06:29:58.695Z] POST /api/update-verifier-link
+[2026-03-31T06:29:58.699Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T06:29:58.699Z"}
+[2026-03-31T06:30:08.259Z] POST /staff/login
+[2026-03-31T06:30:08.708Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T06:30:08.726Z] GET /api/loans
+[2026-03-31T06:30:08.892Z] GET /api/loans
+[2026-03-31T06:30:11.364Z] GET /api/verification-list
+[2026-03-31T06:30:11.679Z] POST /api/update-verifier-link
+[2026-03-31T06:30:11.680Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T06:30:11.680Z"}
+[2026-03-31T06:30:11.682Z] POST /api/update-verifier-link
+[2026-03-31T06:30:11.683Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T06:30:11.683Z"}
+[2026-03-31T06:30:11.822Z] GET /api/verification-list
+[2026-03-31T06:35:08.492Z] POST /staff/login
+[2026-03-31T06:35:08.909Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T06:35:08.963Z] GET /api/loans
+[2026-03-31T06:35:09.214Z] GET /api/loans
+[2026-03-31T06:35:12.405Z] GET /api/verification-list
+[2026-03-31T06:35:12.417Z] POST /api/update-verifier-link
+[2026-03-31T06:35:12.419Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T06:35:12.419Z"}
+[2026-03-31T06:35:12.425Z] POST /api/update-verifier-link
+[2026-03-31T06:35:12.427Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T06:35:12.427Z"}
+[2026-03-31T06:35:12.886Z] GET /api/verification-list
+[2026-03-31T06:48:58.928Z] GET /api/verification-list
+[2026-03-31T06:48:59.023Z] POST /api/update-verifier-link
+[2026-03-31T06:48:59.024Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T06:48:59.024Z"}
+[2026-03-31T06:48:59.026Z] POST /api/update-verifier-link
+[2026-03-31T06:48:59.028Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T06:48:59.028Z"}
+[2026-03-31T06:49:00.445Z] GET /api/verification-list
+[2026-03-31T07:03:35.680Z] GET /api/verification-list
+[2026-03-31T07:03:35.771Z] POST /api/update-verifier-link
+[2026-03-31T07:03:35.773Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:03:35.773Z"}
+[2026-03-31T07:03:35.777Z] POST /api/update-verifier-link
+[2026-03-31T07:03:35.780Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:03:35.780Z"}
+[2026-03-31T07:03:36.482Z] GET /api/verification-list
+[2026-03-31T07:03:54.806Z] POST /staff/login
+[2026-03-31T07:03:55.167Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T07:03:55.219Z] GET /api/loans
+[2026-03-31T07:03:55.381Z] GET /api/loans
+[2026-03-31T07:03:57.874Z] GET /api/verification-list
+[2026-03-31T07:03:58.206Z] POST /api/update-verifier-link
+[2026-03-31T07:03:58.207Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:03:58.207Z"}
+[2026-03-31T07:03:58.212Z] POST /api/update-verifier-link
+[2026-03-31T07:03:58.212Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:03:58.212Z"}
+[2026-03-31T07:03:58.532Z] GET /api/verification-list
+[2026-03-31T07:09:07.200Z] GET /api/verification-list
+[2026-03-31T07:09:07.274Z] POST /api/update-verifier-link
+[2026-03-31T07:09:07.275Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:09:07.275Z"}
+[2026-03-31T07:09:07.279Z] POST /api/update-verifier-link
+[2026-03-31T07:09:07.280Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:09:07.280Z"}
+[2026-03-31T07:09:08.025Z] GET /api/verification-list
+[2026-03-31T07:09:25.198Z] GET /api/verification-list
+[2026-03-31T07:09:25.511Z] POST /api/update-verifier-link
+[2026-03-31T07:09:25.512Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:09:25.512Z"}
+[2026-03-31T07:09:25.514Z] POST /api/update-verifier-link
+[2026-03-31T07:09:25.516Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:09:25.516Z"}
+[2026-03-31T07:09:25.758Z] GET /api/verification-list
+
+--- Starting server at 2026-03-31T07:24:26.175Z ---
+[2026-03-31T07:24:26.219Z] Main Verifier Backend running on port 5006
+[2026-03-31T07:24:36.150Z] GET /api/verification-list
+[2026-03-31T07:24:36.256Z] POST /api/update-verifier-link
+[2026-03-31T07:24:36.258Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:24:36.258Z"}
+[2026-03-31T07:24:36.263Z] POST /api/update-verifier-link
+[2026-03-31T07:24:36.264Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:24:36.264Z"}
+[2026-03-31T07:24:37.630Z] GET /api/verification-list
+[2026-03-31T07:31:11.257Z] GET /api/verification-list
+[2026-03-31T07:31:11.275Z] POST /api/update-verifier-link
+[2026-03-31T07:31:11.276Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:31:11.276Z"}
+[2026-03-31T07:31:11.280Z] POST /api/update-verifier-link
+[2026-03-31T07:31:11.281Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:31:11.281Z"}
+[2026-03-31T07:31:12.156Z] GET /api/verification-list
+[2026-03-31T07:32:35.978Z] POST /staff/login
+[2026-03-31T07:32:36.334Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T07:32:36.358Z] GET /api/loans
+[2026-03-31T07:32:36.497Z] GET /api/loans
+[2026-03-31T07:32:38.340Z] GET /api/verification-list
+[2026-03-31T07:32:38.344Z] POST /api/update-verifier-link
+[2026-03-31T07:32:38.346Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:32:38.346Z"}
+[2026-03-31T07:32:38.350Z] POST /api/update-verifier-link
+[2026-03-31T07:32:38.351Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-03-31T07:32:38.351Z"}
+[2026-03-31T07:32:38.768Z] GET /api/verification-list
+
+--- Starting server at 2026-03-31T07:36:35.525Z ---
+
+--- Starting server at 2026-03-31T07:41:54.662Z ---
+
+--- Starting server at 2026-03-31T08:21:30.074Z ---
+
+--- Starting server at 2026-03-31T08:31:51.752Z ---
+
+--- Starting server at 2026-03-31T08:34:59.558Z ---
+
+--- Starting server at 2026-03-31T08:35:46.117Z ---
+[2026-03-31T08:35:46.201Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-03-31T08:36:32.682Z ---
+[2026-03-31T08:36:32.778Z] Main Verifier Backend running on port 5006
+[2026-03-31T08:36:32.780Z] Failed to start server: listen EADDRINUSE: address already in use 0.0.0.0:5006
+
+--- Starting server at 2026-03-31T08:39:59.412Z ---
+[2026-03-31T08:39:59.506Z] Main Verifier Backend running on port 5006
+[2026-03-31T08:39:59.507Z] Failed to start server: listen EADDRINUSE: address already in use 0.0.0.0:5006
+[2026-03-31T08:42:55.305Z] POST /staff/login
+[2026-03-31T08:42:56.958Z] Login FAILED for STF001: Cannot coerce the result to a single JSON object
+[2026-03-31T08:42:59.566Z] POST /staff/login
+[2026-03-31T08:42:59.795Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T08:43:16.852Z] POST /staff/login
+[2026-03-31T08:43:17.492Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T08:45:34.605Z] POST /staff/login
+[2026-03-31T08:45:35.738Z] Login SUCCESS for STF002 (Verifier)
+[2026-03-31T08:45:35.813Z] GET /api/loans
+[2026-03-31T08:45:36.027Z] GET /api/loans
+[2026-03-31T08:45:37.951Z] GET /api/verification-list
+[2026-03-31T08:45:38.652Z] GET /api/verification-list
+[2026-03-31T08:45:42.671Z] POST /api/update-verifier-link
+[2026-03-31T08:56:56.002Z] GET /api/verification-list
+[2026-03-31T08:56:57.352Z] GET /api/verification-list
+[2026-03-31T08:57:15.683Z] GET /api/verifier-link
+[2026-03-31T08:57:15.693Z] GET /api/verifier-link
+[2026-03-31T08:57:42.707Z] GET /api/verifier-link
+[2026-03-31T08:57:45.883Z] GET /api/verifier-link
+[2026-03-31T08:57:46.959Z] POST /api/update-verifier-link
+[2026-03-31T08:57:50.887Z] GET /api/verification-list
+[2026-03-31T08:57:51.770Z] GET /api/verification-list
+[2026-03-31T08:57:55.886Z] GET /api/verifier-link
+[2026-03-31T08:58:06.200Z] GET /api/verifier-link
+[2026-03-31T08:58:15.892Z] GET /api/verifier-link
+[2026-03-31T08:58:26.198Z] GET /api/verifier-link
+[2026-03-31T08:58:35.894Z] GET /api/verifier-link
+[2026-03-31T08:59:37.201Z] GET /api/verifier-link
+[2026-03-31T09:00:38.202Z] GET /api/verifier-link
+[2026-03-31T09:01:39.201Z] GET /api/verifier-link
+[2026-03-31T09:02:40.195Z] GET /api/verifier-link
+[2026-03-31T09:02:53.968Z] POST /api/update-verifier-link
+[2026-03-31T09:02:53.970Z] Verifier Link Updated: {"link":"sugu@1997","updatedAt":"2026-03-31T09:02:53.970Z"}
+[2026-03-31T09:03:02.213Z] GET /api/verifier-link
+[2026-03-31T09:03:05.696Z] GET /api/verifier-link
+[2026-03-31T09:03:15.691Z] GET /api/verifier-link
+[2026-03-31T09:03:26.203Z] GET /api/verifier-link
+[2026-03-31T09:03:35.890Z] GET /api/verifier-link
+[2026-03-31T09:03:46.200Z] GET /api/verifier-link
+[2026-03-31T09:03:55.895Z] GET /api/verifier-link
+[2026-03-31T09:04:06.192Z] GET /api/verifier-link
+[2026-03-31T09:04:15.893Z] GET /api/verifier-link
+[2026-03-31T09:04:26.197Z] GET /api/verifier-link
+[2026-03-31T09:04:41.898Z] GET /api/verifier-link
+[2026-03-31T09:04:53.195Z] GET /api/verifier-link
+[2026-03-31T09:05:02.885Z] GET /api/verifier-link
+[2026-03-31T09:05:13.198Z] GET /api/verifier-link
+[2026-03-31T09:05:22.885Z] GET /api/verifier-link
+[2026-03-31T09:05:33.203Z] GET /api/verifier-link
+[2026-03-31T09:05:42.894Z] GET /api/verifier-link
+[2026-03-31T09:06:43.199Z] GET /api/verifier-link
+[2026-03-31T09:07:42.895Z] GET /api/verifier-link
+[2026-03-31T09:08:43.201Z] GET /api/verifier-link
+[2026-03-31T09:09:42.895Z] GET /api/verifier-link
+[2026-03-31T09:10:21.403Z] GET /api/verifier-link
+[2026-03-31T09:10:21.899Z] GET /api/verifier-link
+[2026-03-31T09:10:29.525Z] GET /api/verification-list
+[2026-03-31T09:10:29.847Z] POST /api/update-verifier-link
+[2026-03-31T09:10:29.848Z] Verifier Link Updated: {"link":"sugu@1997","updatedAt":"2026-03-31T09:10:29.848Z"}
+[2026-03-31T09:10:29.853Z] POST /api/update-verifier-link
+[2026-03-31T09:10:29.854Z] Verifier Link Updated: {"link":"sugu@1997","updatedAt":"2026-03-31T09:10:29.854Z"}
+[2026-03-31T09:10:30.883Z] GET /api/verification-list
+[2026-03-31T09:10:32.882Z] GET /api/verifier-link
+[2026-03-31T09:10:36.670Z] POST /api/update-verifier-link
+[2026-03-31T09:10:36.672Z] Verifier Link Updated: {"link":"zoom.us/j/1234567890","updatedAt":"2026-03-31T09:10:36.672Z"}
+[2026-03-31T09:10:43.195Z] GET /api/verifier-link
+[2026-03-31T09:10:52.890Z] GET /api/verifier-link
+[2026-03-31T09:11:03.194Z] GET /api/verifier-link
+[2026-03-31T09:11:12.897Z] GET /api/verifier-link
+[2026-03-31T09:11:23.199Z] GET /api/verifier-link
+[2026-03-31T09:11:32.301Z] GET /api/verifier-link
+[2026-03-31T09:11:43.201Z] GET /api/verifier-link
+[2026-03-31T09:11:52.094Z] GET /api/verifier-link
+[2026-03-31T09:12:03.207Z] GET /api/verifier-link
+[2026-03-31T09:12:12.891Z] GET /api/verifier-link
+[2026-03-31T09:12:22.210Z] GET /api/verifier-link
+[2026-03-31T09:12:32.892Z] GET /api/verifier-link
+[2026-03-31T09:12:43.198Z] GET /api/verifier-link
+[2026-03-31T09:12:52.882Z] GET /api/verifier-link
+[2026-03-31T09:13:03.203Z] GET /api/verifier-link
+[2026-03-31T09:13:04.430Z] POST /api/update-verifier-link
+[2026-03-31T09:13:04.432Z] Verifier Link Updated: {"link":"zoom.us/j/1234","updatedAt":"2026-03-31T09:13:04.432Z"}
+[2026-03-31T09:13:12.892Z] GET /api/verifier-link
+[2026-03-31T09:13:26.059Z] GET /api/verifier-link
+[2026-03-31T09:13:32.886Z] GET /api/verifier-link
+[2026-03-31T09:13:43.207Z] GET /api/verifier-link
+[2026-03-31T09:13:52.895Z] GET /api/verifier-link
+[2026-03-31T09:14:03.198Z] GET /api/verifier-link
+[2026-03-31T09:14:12.892Z] GET /api/verifier-link
+[2026-03-31T09:14:23.191Z] GET /api/verifier-link
+[2026-03-31T09:14:42.894Z] GET /api/verifier-link
+[2026-03-31T09:15:11.765Z] GET /api/verifier-link
+[2026-03-31T09:15:22.892Z] GET /api/verifier-link
+[2026-03-31T09:15:33.195Z] GET /api/verifier-link
+[2026-03-31T09:15:42.891Z] GET /api/verifier-link
+[2026-03-31T09:15:53.202Z] GET /api/verifier-link
+[2026-03-31T09:16:02.883Z] GET /api/verifier-link
+[2026-03-31T09:16:13.194Z] GET /api/verifier-link
+[2026-03-31T09:16:42.887Z] GET /api/verifier-link
+[2026-03-31T09:17:43.201Z] GET /api/verifier-link
+[2026-03-31T09:18:42.893Z] GET /api/verifier-link
+[2026-03-31T09:19:43.198Z] GET /api/verifier-link
+[2026-03-31T09:20:42.886Z] GET /api/verifier-link
+[2026-03-31T09:21:43.224Z] GET /api/verifier-link
+[2026-03-31T09:21:59.744Z] GET /api/verifier-link
+[2026-03-31T09:22:01.909Z] GET /api/verifier-link
+[2026-03-31T09:22:13.210Z] GET /api/verifier-link
+[2026-03-31T09:22:22.896Z] GET /api/verifier-link
+[2026-03-31T09:22:33.202Z] GET /api/verifier-link
+[2026-03-31T09:22:42.894Z] GET /api/verifier-link
+[2026-03-31T09:22:53.194Z] GET /api/verifier-link
+[2026-03-31T09:23:02.881Z] GET /api/verifier-link
+[2026-03-31T09:23:43.195Z] GET /api/verifier-link
+[2026-03-31T09:24:34.009Z] GET /api/verifier-link
+[2026-03-31T09:24:43.212Z] GET /api/verifier-link
+[2026-03-31T09:24:51.906Z] GET /api/verifier-link
+[2026-03-31T09:25:03.205Z] GET /api/verifier-link
+[2026-03-31T09:25:12.896Z] GET /api/verifier-link
+[2026-03-31T09:25:23.191Z] GET /api/verifier-link
+[2026-03-31T09:25:32.885Z] GET /api/verifier-link
+[2026-03-31T09:25:43.201Z] GET /api/verifier-link
+[2026-03-31T09:25:52.882Z] GET /api/verifier-link
+[2026-03-31T09:26:03.199Z] GET /api/verifier-link
+[2026-03-31T09:26:12.893Z] GET /api/verifier-link
+[2026-03-31T09:26:43.196Z] GET /api/verifier-link
+[2026-03-31T09:27:42.895Z] GET /api/verifier-link
+[2026-03-31T09:28:56.705Z] GET /api/verifier-link
+[2026-03-31T09:29:02.884Z] GET /api/verifier-link
+[2026-03-31T09:29:13.202Z] GET /api/verifier-link
+[2026-03-31T09:29:22.883Z] GET /api/verifier-link
+[2026-03-31T09:29:33.237Z] GET /api/verifier-link
+[2026-03-31T09:29:42.891Z] GET /api/verifier-link
+[2026-03-31T09:29:53.193Z] GET /api/verifier-link
+[2026-03-31T09:30:42.925Z] GET /api/verifier-link
+[2026-03-31T09:31:43.236Z] GET /api/verifier-link
+[2026-03-31T09:32:42.896Z] GET /api/verifier-link
+[2026-03-31T09:33:43.205Z] GET /api/verifier-link
+[2026-03-31T09:54:10.254Z] GET /api/verification-list
+[2026-03-31T09:54:10.399Z] POST /api/update-verifier-link
+[2026-03-31T09:54:10.401Z] Verifier Link Updated: {"link":"zoom.us/j/1234","updatedAt":"2026-03-31T09:54:10.401Z"}
+[2026-03-31T09:54:10.409Z] POST /api/update-verifier-link
+[2026-03-31T09:54:10.410Z] Verifier Link Updated: {"link":"zoom.us/j/1234","updatedAt":"2026-03-31T09:54:10.410Z"}
+[2026-03-31T09:54:12.228Z] GET /api/verification-list
+[2026-03-31T09:54:55.051Z] POST /api/update-verifier-link
+[2026-03-31T09:54:55.053Z] Verifier Link Updated: {"link":"8387674349","updatedAt":"2026-03-31T09:54:55.053Z"}
+[2026-03-31T09:57:30.601Z] POST /api/update-verifier-link
+[2026-03-31T10:11:10.122Z] GET /api/verification-list
+[2026-03-31T10:11:11.712Z] GET /api/verification-list
+[2026-03-31T10:11:23.199Z] POST /api/update-verifier-link
+[2026-03-31T10:18:30.488Z] POST /api/update-verifier-link
+[2026-03-31T10:18:30.618Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/85848968564?pwd=wNEgz8jlbxSyna7eTHIbhDb28hNbRt.1","updatedAt":"2026-03-31T10:18:30.617Z"}
+[2026-03-31T10:26:31.998Z] POST /api/update-verifier-link
+[2026-03-31T10:26:32.025Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T10:26:32.024Z"}
+[2026-03-31T10:26:52.373Z] GET /api/verifier-link
+[2026-03-31T10:28:05.930Z] POST /api/approve-verification
+[2026-03-31T10:28:06.657Z] GET /api/verification-list
+[2026-03-31T10:28:07.313Z] POST /api/approve-verification
+[2026-03-31T10:28:07.480Z] GET /api/verification-list
+[2026-03-31T10:29:05.636Z] GET /api/verification-list
+[2026-03-31T10:29:05.950Z] POST /api/update-verifier-link
+[2026-03-31T10:29:05.951Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T10:29:05.951Z"}
+[2026-03-31T10:29:05.953Z] POST /api/update-verifier-link
+[2026-03-31T10:29:05.954Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T10:29:05.954Z"}
+[2026-03-31T10:29:06.604Z] GET /api/verification-list
+[2026-03-31T10:29:18.352Z] GET /api/loans
+[2026-03-31T10:29:18.714Z] GET /api/loans
+[2026-03-31T10:29:19.044Z] GET /api/verification-list
+[2026-03-31T10:29:19.047Z] POST /api/update-verifier-link
+[2026-03-31T10:29:19.048Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T10:29:19.048Z"}
+[2026-03-31T10:29:19.052Z] POST /api/update-verifier-link
+[2026-03-31T10:29:19.054Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T10:29:19.054Z"}
+[2026-03-31T10:29:19.458Z] GET /api/verification-list
+[2026-03-31T15:57:04.428Z] GET /api/verification-list
+[2026-03-31T15:57:04.562Z] POST /api/update-verifier-link
+[2026-03-31T15:57:04.564Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T15:57:04.564Z"}
+[2026-03-31T15:57:04.574Z] POST /api/update-verifier-link
+[2026-03-31T15:57:04.575Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T15:57:04.575Z"}
+[2026-03-31T15:57:06.029Z] GET /api/verification-list
+[2026-03-31T15:58:01.487Z] GET /api/verification-list
+[2026-03-31T15:58:01.803Z] POST /api/update-verifier-link
+[2026-03-31T15:58:01.804Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T15:58:01.804Z"}
+[2026-03-31T15:58:01.805Z] POST /api/update-verifier-link
+[2026-03-31T15:58:01.806Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-03-31T15:58:01.806Z"}
+[2026-03-31T15:58:02.353Z] GET /api/verification-list
+
+--- Starting server at 2026-03-31T16:01:17.386Z ---
+[2026-03-31T16:01:17.460Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-07T17:16:07.944Z ---
+[2026-04-07T17:16:08.028Z] Main Verifier Backend running on port 5006
+[2026-04-07T17:16:34.672Z] POST /staff/login
+[2026-04-07T17:16:36.020Z] Login SUCCESS for STF002 (Verifier)
+[2026-04-07T17:16:36.092Z] GET /api/loans
+[2026-04-07T17:16:36.374Z] GET /api/loans
+[2026-04-07T17:17:03.037Z] GET /api/verification-list
+[2026-04-07T17:17:04.059Z] GET /api/verification-list
+[2026-04-07T17:17:09.424Z] GET /api/loans
+[2026-04-07T17:17:10.024Z] GET /api/loans
+[2026-04-07T17:17:11.598Z] GET /api/loans
+[2026-04-07T17:17:11.764Z] GET /api/loans
+[2026-04-07T17:17:16.262Z] GET /api/loans
+[2026-04-07T17:17:16.553Z] GET /api/loans
+[2026-04-07T17:41:29.753Z] GET /api/loans
+[2026-04-07T17:41:31.525Z] GET /api/loans
+[2026-04-07T17:41:55.998Z] GET /api/loans
+[2026-04-07T17:41:56.443Z] GET /api/loans
+[2026-04-07T17:42:06.611Z] GET /api/loans
+[2026-04-07T17:42:07.036Z] GET /api/loans
+[2026-04-07T17:42:08.661Z] GET /api/loans
+[2026-04-07T17:42:08.935Z] GET /api/loans
+
+--- Starting server at 2026-04-08T17:11:40.786Z ---
+[2026-04-08T17:11:40.870Z] Main Verifier Backend running on port 5006
+[2026-04-08T17:12:02.712Z] GET /api/verification-list
+[2026-04-08T17:12:02.847Z] POST /api/update-verifier-link
+[2026-04-08T17:12:02.850Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-08T17:12:02.850Z"}
+[2026-04-08T17:12:02.859Z] POST /api/update-verifier-link
+[2026-04-08T17:12:02.861Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-08T17:12:02.861Z"}
+[2026-04-08T17:12:03.799Z] GET /api/verification-list
+[2026-04-08T17:13:08.431Z] GET /api/loans
+[2026-04-08T17:13:08.791Z] GET /api/loans
+[2026-04-08T17:13:32.096Z] GET /api/loans
+[2026-04-08T17:13:32.932Z] GET /api/loans
+[2026-04-08T17:13:35.858Z] GET /api/loans
+[2026-04-08T17:13:36.123Z] GET /api/loans
+[2026-04-08T17:13:38.764Z] GET /api/loans
+[2026-04-08T17:13:38.953Z] GET /api/loans
+[2026-04-08T17:13:41.580Z] GET /api/loans
+[2026-04-08T17:13:41.758Z] GET /api/loans
+[2026-04-08T17:13:43.750Z] GET /api/loans
+[2026-04-08T17:13:44.092Z] GET /api/loans
+[2026-04-08T17:13:51.550Z] GET /api/loans
+[2026-04-08T17:13:51.880Z] GET /api/loans
+[2026-04-08T17:13:56.551Z] GET /api/loans
+[2026-04-08T17:13:56.852Z] GET /api/loans
+[2026-04-08T17:15:28.497Z] GET /api/loans
+[2026-04-08T17:15:29.207Z] GET /api/loans
+[2026-04-08T17:15:39.227Z] GET /api/loans
+[2026-04-08T17:15:39.607Z] GET /api/loans
+[2026-04-08T17:15:39.705Z] GET /api/verification-list
+[2026-04-08T17:15:39.788Z] POST /api/update-verifier-link
+[2026-04-08T17:15:39.789Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-08T17:15:39.789Z"}
+[2026-04-08T17:15:39.796Z] POST /api/update-verifier-link
+[2026-04-08T17:15:39.797Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-08T17:15:39.797Z"}
+[2026-04-08T17:15:40.254Z] GET /api/verification-list
+[2026-04-08T17:15:43.229Z] GET /api/verification-list
+[2026-04-08T17:15:43.235Z] POST /api/update-verifier-link
+[2026-04-08T17:15:43.237Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-08T17:15:43.237Z"}
+[2026-04-08T17:15:43.241Z] POST /api/update-verifier-link
+[2026-04-08T17:15:43.245Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-08T17:15:43.245Z"}
+[2026-04-08T17:15:43.574Z] GET /api/verification-list
+[2026-04-08T17:16:01.537Z] POST /staff/login
+[2026-04-08T17:16:01.882Z] Login SUCCESS for STF002 (Verifier)
+[2026-04-08T17:16:01.913Z] GET /api/loans
+[2026-04-08T17:16:02.049Z] GET /api/loans
+[2026-04-08T17:17:51.964Z] GET /api/loans
+[2026-04-08T17:17:53.074Z] GET /api/loans
+[2026-04-08T17:17:59.628Z] POST /api/loans/6/verify
+[2026-04-08T17:17:59.653Z] Attempting to update loan 6 status to Approved in 'loans' table...
+[2026-04-08T17:18:00.432Z] Update success for loan 6: [{"id":6,"member_id":6,"center_id":3,"status":"APPROVED","member_cibil":"675","person_name":"Wrwe","date_of_birth":"1998-02-23","gender":"Female","religion":"Hindu","marital_status":"Widowed","aadhar_no":"876543567897","member_work":"Ergrg","annual_income":45678976,"nominee_name":"Fxfghjk","nominee_dob":"1988-05-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Uyfuygfjuygf","mobile_no":"7657890876","nominee_mobile":"8976456789","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583002796-cropped.jpg","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583004197-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583004443-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583005010-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583005245-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583005524-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583005829-cropped.jpg","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583006137-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775583006444-cropped.jpg","created_at":"2026-04-07T17:30:07.587235+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Rfger","member_name":"Wrwe","verifier_id":"STF002","verified_at":"2026-04-08T17:17:59.657+00:00","verification_remarks":"df","first_cycle_rg_number":"Ln-2342314","disbursement_status":"PENDING","credited_at":null,"amount_sanctioned":null,"scheme_name":null,"sanctioned_at":null,"disbursement_app_status":"PENDING"}]
+[2026-04-08T17:18:02.297Z] GET /api/loans
+[2026-04-08T17:18:02.514Z] GET /api/loans
+[2026-04-08T17:18:04.388Z] GET /api/loans
+[2026-04-08T17:18:04.568Z] GET /api/loans
+[2026-04-08T17:18:09.283Z] POST /api/loans/5/verify
+[2026-04-08T17:18:09.284Z] Attempting to update loan 5 status to Approved in 'loans' table...
+[2026-04-08T17:18:09.692Z] Update success for loan 5: [{"id":5,"member_id":5,"center_id":3,"status":"APPROVED","member_cibil":"321","person_name":"Rege","date_of_birth":"1987-12-23","gender":"Female","religion":"Hindu","marital_status":"Divorced","aadhar_no":"765435678908","member_work":"Fgchvjkmn","annual_income":345678,"nominee_name":"Kljgfxcvb","nominee_dob":"1989-06-07","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Lfgdgh","mobile_no":"9876578908","nominee_mobile":"9876578976","member_email":"hjgfhgvb;lkj@gmail.com","address":"liuyfgdxcgvhjk","pincode":"785432","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458692866-cropped.jpg","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458693927-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458694125-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458694317-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458694585-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458694781-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458695044-cropped.jpg","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458695220-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775458695409-cropped.jpg","created_at":"2026-04-06T06:58:15.607857+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Rfger","member_name":"Rege","verifier_id":"STF002","verified_at":"2026-04-08T17:18:09.286+00:00","verification_remarks":"dsf","first_cycle_rg_number":null,"disbursement_status":"PENDING","credited_at":null,"amount_sanctioned":null,"scheme_name":null,"sanctioned_at":null,"disbursement_app_status":"PENDING"}]
+[2026-04-08T17:18:11.476Z] GET /api/loans
+[2026-04-08T17:18:11.627Z] GET /api/loans
+[2026-04-08T17:18:13.845Z] GET /api/loans
+[2026-04-08T17:18:14.018Z] GET /api/loans
+[2026-04-08T17:18:15.244Z] POST /api/loans/4/verify
+[2026-04-08T17:18:15.245Z] Attempting to update loan 4 status to Approved in 'loans' table...
+[2026-04-08T17:18:15.375Z] Update success for loan 4: [{"id":4,"member_id":4,"center_id":2,"status":"APPROVED","member_cibil":"786","person_name":"Kfjgij","date_of_birth":"2001-07-06","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"765435769809","member_work":"Gfghj","annual_income":4567,"nominee_name":"Ikujytf","nominee_dob":"1996-03-04","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Single","nominee_relationship":"Spouse","nominee_business":"Oiuytfjkl","mobile_no":"8876678687","nominee_mobile":"8765467980","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725138106-1044_SUDHA.png","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517789801-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790230-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725540638-1045_JULEGA.png","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517790592-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791040-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/replacements/1774725421359-1044_SUDHA.png","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791425-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1774517791614-cropped.jpg","created_at":"2026-03-26T09:36:32.930175+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Hgdsfjhgds","member_name":"Kfjgij","verifier_id":"STF002","verified_at":"2026-04-08T17:18:15.246+00:00","verification_remarks":"[QUERY:pan_card_url] [QUERY:nominee_aadhaar_front_url] [QUERY:nominee_aadhaar_back_url] Document is not clear Document is not clear Document is not clear","first_cycle_rg_number":null,"disbursement_status":"PENDING","credited_at":null,"amount_sanctioned":null,"scheme_name":null,"sanctioned_at":null,"disbursement_app_status":"PENDING"}]
+[2026-04-08T17:18:17.178Z] GET /api/loans
+[2026-04-08T17:18:18.603Z] GET /api/loans
+
+--- Starting server at 2026-04-09T07:18:27.526Z ---
+[2026-04-09T07:18:27.618Z] Main Verifier Backend running on port 5006
+[2026-04-09T07:18:49.624Z] GET /api/verification-list
+[2026-04-09T07:18:49.765Z] POST /api/update-verifier-link
+[2026-04-09T07:18:49.767Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-09T07:18:49.767Z"}
+[2026-04-09T07:18:49.773Z] POST /api/update-verifier-link
+[2026-04-09T07:18:49.775Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-09T07:18:49.775Z"}
+[2026-04-09T07:18:50.699Z] GET /api/verification-list
+[2026-04-09T07:18:53.122Z] GET /api/loans
+[2026-04-09T07:18:53.258Z] GET /api/loans
+[2026-04-09T07:19:02.478Z] GET /api/loans
+[2026-04-09T07:19:02.873Z] GET /api/loans
+
+--- Starting server at 2026-04-09T08:07:53.804Z ---
+[2026-04-09T08:07:54.031Z] Main Verifier Backend running on port 5006
+[2026-04-09T08:08:29.862Z] GET /api/verification-list
+[2026-04-09T08:08:30.084Z] POST /api/update-verifier-link
+[2026-04-09T08:08:30.087Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-09T08:08:30.087Z"}
+[2026-04-09T08:08:30.102Z] POST /api/update-verifier-link
+[2026-04-09T08:08:30.104Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-09T08:08:30.104Z"}
+[2026-04-09T08:08:30.852Z] GET /api/verification-list
+[2026-04-09T08:08:34.584Z] GET /api/loans
+[2026-04-09T08:08:34.705Z] GET /api/loans
+[2026-04-09T08:08:42.678Z] GET /api/loans
+[2026-04-09T08:08:42.981Z] GET /api/loans
+[2026-04-09T10:12:06.136Z] GET /api/loans
+[2026-04-09T10:12:06.741Z] GET /api/loans
+
+--- Starting server at 2026-04-09T11:12:12.203Z ---
+[2026-04-09T11:12:12.291Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-09T11:16:38.143Z ---
+[2026-04-09T11:16:38.269Z] Main Verifier Backend running on port 5006
+[2026-04-09T11:16:38.270Z] Failed to start server: listen EADDRINUSE: address already in use 0.0.0.0:5006
+
+--- Starting server at 2026-04-09T14:44:50.793Z ---
+[2026-04-09T14:44:50.869Z] Main Verifier Backend running on port 5006
+[2026-04-09T14:45:20.406Z] POST /staff/login
+[2026-04-09T14:45:21.563Z] Login SUCCESS for STF002 (Verifier)
+[2026-04-09T14:45:21.628Z] GET /api/loans
+[2026-04-09T14:45:21.883Z] GET /api/loans
+[2026-04-09T15:02:54.160Z] GET /api/verification-list
+[2026-04-09T15:02:54.226Z] POST /api/update-verifier-link
+[2026-04-09T15:02:54.229Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:02:54.229Z"}
+[2026-04-09T15:02:54.239Z] POST /api/update-verifier-link
+[2026-04-09T15:02:54.242Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:02:54.242Z"}
+[2026-04-09T15:02:55.554Z] GET /api/verification-list
+[2026-04-09T15:03:00.785Z] GET /api/loans
+[2026-04-09T15:03:01.219Z] GET /api/loans
+[2026-04-09T15:06:19.424Z] GET /api/loans
+[2026-04-09T15:06:19.952Z] GET /api/loans
+[2026-04-09T15:06:27.055Z] POST /api/loans/10/verify
+[2026-04-09T15:06:27.063Z] Attempting to update loan 10 status to Approved in 'loans' table...
+[2026-04-09T15:06:27.501Z] Update success for loan 10: [{"id":10,"member_id":9,"center_id":5,"status":"APPROVED","member_cibil":"789","person_name":"Kjjhgvcb","date_of_birth":"1997-03-12","gender":"Female","religion":"Hindu","marital_status":"Married","aadhar_no":"987654376890","member_work":"Ergrg","annual_income":8765678,"nominee_name":"Poih","nominee_dob":"1997-06-07","nominee_gender":"Male","nominee_religion":"Hindu","nominee_marital_status":"Married","nominee_relationship":"Spouse","nominee_business":"Jhkgjh","mobile_no":"5768987654","nominee_mobile":"8798765435","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732283542-cropped.jpg","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732284001-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732284182-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732284358-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732284567-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732284739-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732284939-cropped.jpg","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732285096-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775732285276-cropped.jpg","created_at":"2026-04-09T10:58:05.870424+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Kjjh","member_name":"Kjjhgvcb","verifier_id":"STF002","verified_at":"2026-04-09T15:06:27.065+00:00","verification_remarks":"fgr","first_cycle_rg_number":null,"disbursement_status":"PENDING","credited_at":null,"amount_sanctioned":null,"scheme_name":null,"sanctioned_at":null,"disbursement_app_status":"PENDING","loan_app_id":"APP-656048"}]
+[2026-04-09T15:06:29.086Z] GET /api/loans
+[2026-04-09T15:06:29.384Z] GET /api/loans
+[2026-04-09T15:06:31.786Z] GET /api/loans
+[2026-04-09T15:06:32.065Z] GET /api/loans
+[2026-04-09T15:06:35.448Z] POST /api/loans/9/verify
+[2026-04-09T15:06:35.450Z] Attempting to update loan 9 status to Approved in 'loans' table...
+[2026-04-09T15:06:38.079Z] Update success for loan 9: [{"id":9,"member_id":8,"center_id":5,"status":"APPROVED","member_cibil":"890","person_name":"Hjgvb","date_of_birth":"1997-11-12","gender":"Female","religion":"Muslim","marital_status":"Divorced","aadhar_no":"876579808765","member_work":"Ergrg","annual_income":9887657890,"nominee_name":"Nxvbvk","nominee_dob":"1997-07-06","nominee_gender":"Female","nominee_religion":"Muslim","nominee_marital_status":"Married","nominee_relationship":"Spouse","nominee_business":"Uyfuygfjuygf","mobile_no":"9873456782","nominee_mobile":"9873456722","member_email":"sugukumar778@gmail.com","address":"dindigul","pincode":"610001","member_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724446962-cropped.jpg","member_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724447900-cropped.jpg","nominee_aadhaar_front_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724448148-cropped.jpg","nominee_aadhaar_back_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724448348-cropped.jpg","pan_card_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724448532-cropped.jpg","form_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724448723-cropped.jpg","signature_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724448955-cropped.jpg","member_photo_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724449137-cropped.jpg","passbook_image_url":"https://ojhxryeefkzhgwxwgsxj.supabase.co/storage/v1/object/public/loan-documents/loans/1775724449329-cropped.jpg","created_at":"2026-04-09T08:47:29.998656+00:00","staff_id":"STF001","staff_name":"sugumar","center_name":"Kjjh","member_name":"Hjgvb","verifier_id":"STF002","verified_at":"2026-04-09T15:06:35.451+00:00","verification_remarks":"erg","first_cycle_rg_number":null,"disbursement_status":"PENDING","credited_at":null,"amount_sanctioned":null,"scheme_name":null,"sanctioned_at":null,"disbursement_app_status":"PENDING","loan_app_id":"APP-207170"}]
+[2026-04-09T15:06:39.865Z] GET /api/loans
+[2026-04-09T15:06:40.128Z] GET /api/loans
+[2026-04-09T15:06:42.471Z] GET /api/verification-list
+[2026-04-09T15:06:42.479Z] POST /api/update-verifier-link
+[2026-04-09T15:06:42.480Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:06:42.480Z"}
+[2026-04-09T15:06:42.491Z] POST /api/update-verifier-link
+[2026-04-09T15:06:42.496Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:06:42.496Z"}
+[2026-04-09T15:06:42.934Z] GET /api/verification-list
+[2026-04-09T15:19:02.141Z] POST /api/update-verifier-link
+[2026-04-09T15:19:02.161Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:19:02.161Z"}
+[2026-04-09T15:19:11.973Z] POST /api/update-verifier-link
+[2026-04-09T15:19:11.975Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:19:11.975Z"}
+[2026-04-09T15:19:13.903Z] POST /api/update-verifier-link
+[2026-04-09T15:19:13.910Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:19:13.910Z"}
+[2026-04-09T15:19:34.965Z] POST /api/update-verifier-link
+[2026-04-09T15:19:34.967Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:19:34.967Z"}
+[2026-04-09T15:20:01.496Z] POST /api/update-verifier-link
+[2026-04-09T15:20:01.498Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:20:01.498Z"}
+[2026-04-09T15:20:04.878Z] POST /api/update-verifier-link
+[2026-04-09T15:20:04.881Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:20:04.880Z"}
+[2026-04-09T15:20:10.120Z] POST /api/update-verifier-link
+[2026-04-09T15:20:10.173Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:20:10.173Z"}
+[2026-04-09T15:51:49.170Z] GET /api/verification-list
+[2026-04-09T15:51:49.290Z] POST /api/update-verifier-link
+[2026-04-09T15:51:49.292Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:51:49.292Z"}
+[2026-04-09T15:51:49.296Z] POST /api/update-verifier-link
+[2026-04-09T15:51:49.297Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:51:49.297Z"}
+[2026-04-09T15:51:50.564Z] GET /api/verification-list
+[2026-04-09T15:59:47.522Z] POST /api/update-verifier-link
+[2026-04-09T15:59:47.555Z] Verifier Link Updated: {"link":"sugumar@1997","updatedAt":"2026-04-09T15:59:47.553Z"}
+[2026-04-09T16:00:00.242Z] POST /api/update-verifier-link
+[2026-04-09T16:04:44.657Z] POST /api/update-verifier-link
+[2026-04-09T16:04:44.691Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1","updatedAt":"2026-04-09T16:04:44.689Z"}
+
+--- Starting server at 2026-04-10T00:05:25.162Z ---
+[2026-04-10T00:05:25.231Z] Main Verifier Backend running on port 5006
+[2026-04-10T00:05:39.286Z] GET /api/verification-list
+[2026-04-10T00:05:39.464Z] POST /api/update-verifier-link
+[2026-04-10T00:05:39.466Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-10T00:05:39.466Z"}
+[2026-04-10T00:05:39.474Z] POST /api/update-verifier-link
+[2026-04-10T00:05:39.478Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88011185028?pwd=ECnTurpLaK04GJbyumEU2cb87axgDW.1","updatedAt":"2026-04-10T00:05:39.478Z"}
+[2026-04-10T00:05:41.382Z] GET /api/verification-list
+[2026-04-10T00:14:15.733Z] POST /api/update-verifier-link
+
+--- Starting server at 2026-04-10T00:14:43.671Z ---
+[2026-04-10T00:14:43.949Z] Main Verifier Backend running on port 5006
+[2026-04-10T00:15:51.905Z] POST /api/update-verifier-link
+
+--- Starting server at 2026-04-10T00:17:37.955Z ---
+[2026-04-10T00:17:38.070Z] Main Verifier Backend running on port 5006
+[2026-04-10T00:19:06.036Z] POST /api/update-verifier-link
+[2026-04-10T00:19:46.978Z] POST /api/update-verifier-link
+[2026-04-10T00:19:48.269Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1
+[2026-04-10T00:19:48.270Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1","updatedAt":"2026-04-10T00:19:46.982Z"}
+[2026-04-10T00:28:02.034Z] GET /api/verification-list
+[2026-04-10T00:28:02.124Z] POST /api/update-verifier-link
+[2026-04-10T00:28:02.133Z] POST /api/update-verifier-link
+[2026-04-10T00:28:03.715Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1
+[2026-04-10T00:28:03.716Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1","updatedAt":"2026-04-10T00:28:02.135Z"}
+[2026-04-10T00:28:03.725Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1
+[2026-04-10T00:28:03.726Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1","updatedAt":"2026-04-10T00:28:02.135Z"}
+[2026-04-10T00:28:03.740Z] GET /api/verification-list
+[2026-04-10T00:30:23.017Z] GET /api/verification-list
+[2026-04-10T00:30:23.683Z] POST /api/update-verifier-link
+[2026-04-10T00:30:24.730Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1
+[2026-04-10T00:30:24.731Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1","updatedAt":"2026-04-10T00:30:23.685Z"}
+[2026-04-10T00:32:24.046Z] GET /api/loans
+[2026-04-10T00:32:24.802Z] GET /api/loans
+[2026-04-10T00:32:28.715Z] GET /api/loans
+[2026-04-10T00:32:28.918Z] GET /api/loans
+
+--- Starting server at 2026-04-10T00:34:10.850Z ---
+[2026-04-10T00:34:11.002Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-10T00:56:14.600Z ---
+[2026-04-10T00:56:14.660Z] Main Verifier Backend running on port 5006
+[2026-04-10T00:56:31.310Z] GET /api/verification-list
+[2026-04-10T00:56:31.845Z] POST /api/update-verifier-link
+[2026-04-10T00:56:35.302Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1
+[2026-04-10T00:56:35.304Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1","updatedAt":"2026-04-10T00:56:31.848Z"}
+[2026-04-10T00:56:35.510Z] GET /api/verification-list
+[2026-04-10T00:59:10.972Z] GET /api/loans
+[2026-04-10T00:59:14.673Z] GET /api/loans
+[2026-04-10T00:59:20.732Z] GET /api/loans
+[2026-04-10T00:59:21.206Z] GET /api/loans
+[2026-04-10T00:59:55.645Z] GET /api/verification-list
+[2026-04-10T00:59:56.142Z] POST /api/update-verifier-link
+[2026-04-10T01:00:00.027Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1
+[2026-04-10T01:00:00.029Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1","updatedAt":"2026-04-10T00:59:56.144Z"}
+[2026-04-10T01:00:00.038Z] GET /api/verification-list
+[2026-04-10T01:00:25.414Z] GET /api/loans
+[2026-04-10T01:00:26.152Z] GET /api/loans
+
+--- Starting server at 2026-04-10T01:01:05.192Z ---
+[2026-04-10T01:01:05.256Z] Main Verifier Backend running on port 5006
+[2026-04-10T01:01:52.567Z] GET /api/verification-list
+[2026-04-10T01:01:53.082Z] POST /api/update-verifier-link
+[2026-04-10T01:01:54.890Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1
+[2026-04-10T01:01:54.891Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1","updatedAt":"2026-04-10T01:01:53.084Z"}
+[2026-04-10T01:01:55.198Z] GET /api/verification-list
+[2026-04-10T01:01:59.980Z] GET /api/verification-list
+[2026-04-10T01:02:00.789Z] POST /api/update-verifier-link
+[2026-04-10T01:02:01.213Z] GET /api/verification-list
+[2026-04-10T01:02:01.530Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1
+[2026-04-10T01:02:01.531Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1","updatedAt":"2026-04-10T01:02:00.791Z"}
+
+--- Starting server at 2026-04-10T01:02:39.736Z ---
+[2026-04-10T01:02:39.783Z] Main Verifier Backend running on port 5006
+[2026-04-10T01:02:56.120Z] GET /api/verification-list
+[2026-04-10T01:02:56.632Z] POST /api/update-verifier-link
+[2026-04-10T01:02:57.560Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1
+[2026-04-10T01:02:57.562Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1","updatedAt":"2026-04-10T01:02:56.634Z"}
+[2026-04-10T01:02:57.751Z] GET /api/verification-list
+
+--- Starting server at 2026-04-10T01:04:20.810Z ---
+[2026-04-10T01:04:20.870Z] Main Verifier Backend running on port 5006
+[2026-04-10T01:04:56.047Z] GET /api/verification-list
+[2026-04-10T01:04:56.562Z] POST /api/update-verifier-link
+[2026-04-10T01:05:08.228Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1
+[2026-04-10T01:05:08.229Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1","updatedAt":"2026-04-10T01:04:56.564Z"}
+[2026-04-10T01:05:14.965Z] GET /api/verification-list
+
+--- Starting server at 2026-04-10T01:06:15.743Z ---
+[2026-04-10T01:06:15.800Z] Main Verifier Backend running on port 5006
+[2026-04-10T01:07:03.900Z] GET /api/verification-list
+[2026-04-10T01:07:04.419Z] POST /api/update-verifier-link
+[2026-04-10T01:07:04.889Z] Verifier Host Link saved to Supabase: https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1
+[2026-04-10T01:07:04.890Z] Verifier Link Updated: {"link":"https://us05web.zoom.us/j/88596713572?pwd=olizBE6mpitBOExKmbngcEtvoXb827.1","updatedAt":"2026-04-10T01:07:04.421Z"}
+[2026-04-10T01:07:05.059Z] GET /api/verification-list
+[2026-04-10T01:23:38.733Z] POST /api/approve-verification
+[2026-04-10T01:23:40.627Z] 📝 Bridging PD Approval for Member: 9 (Center: 5)
+[2026-04-10T01:23:40.985Z] ⚠️ Sync Warning: No matching Pending loan found for Member 9. Is the member ID correct?
+[2026-04-10T01:23:40.999Z] GET /api/verification-list
+[2026-04-10T01:23:45.297Z] POST /api/approve-verification
+[2026-04-10T01:23:45.787Z] 📝 Bridging PD Approval for Member: 8 (Center: 5)
+[2026-04-10T01:23:46.229Z] ⚠️ Sync Warning: No matching Pending loan found for Member 8. Is the member ID correct?
+[2026-04-10T01:23:46.852Z] GET /api/verification-list
+[2026-04-10T01:23:53.489Z] GET /api/loans
+[2026-04-10T01:23:55.544Z] GET /api/loans
+[2026-04-10T01:37:12.535Z] GET /api/loans
+[2026-04-10T01:37:23.416Z] Error fetching loans: TypeError: fetch failed
+[2026-04-10T01:37:23.429Z] GET /api/loans
+[2026-04-10T01:37:28.680Z] GET /api/loans
+[2026-04-10T01:37:29.585Z] GET /api/loans
+
+--- Starting server at 2026-04-10T02:36:33.129Z ---
+[2026-04-10T02:36:33.337Z] Main Verifier Backend running on port 5006

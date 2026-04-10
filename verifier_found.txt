@@ -1,0 +1,22 @@
+[
+  {
+    "staff_id": "STF001",
+    "role": "Relationship Officer"
+  },
+  {
+    "staff_id": "STF002",
+    "role": "Verifier"
+  },
+  {
+    "staff_id": "STF003",
+    "role": "Manager"
+  },
+  {
+    "staff_id": "STF004",
+    "role": "HR"
+  },
+  {
+    "staff_id": "STF005",
+    "role": "Area Manager"
+  }
+]
