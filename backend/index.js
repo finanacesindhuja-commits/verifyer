@@ -495,6 +495,15 @@ app.post('/staff/login', async (req, res) => {
   }
 });
 
+// --- Serve Frontend ---
+const staticPath = path.join(__dirname, '../frontend/dist');
+app.use(express.static(staticPath));
+
+// Fallback for Single Page Application (SPA) routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(staticPath, 'index.html'));
+});
+
 app.listen(PORT, '0.0.0.0', () => {
     log(`Main Verifier Backend running on port ${PORT}`);
     console.log(`Server is listening on http://localhost:${PORT}`);
