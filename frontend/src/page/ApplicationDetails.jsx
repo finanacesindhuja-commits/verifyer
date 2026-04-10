@@ -12,7 +12,7 @@ function ApplicationDetails() {
   const [submitting, setSubmitting] = useState(false);
   const [remarks, setRemarks] = useState('');
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5006';
+  const apiUrl = import.meta.env.VITE_API_URL || '';
 
   useEffect(() => {
     fetchLoanDetails();

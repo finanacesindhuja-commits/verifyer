@@ -37,7 +37,7 @@ function PdVerify() {
     debounceTimer.current = setTimeout(async () => {
       if (!val.trim()) return;
       try {
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5006';
+        const apiUrl = import.meta.env.VITE_API_URL || '';
         await axios.post(`${apiUrl}/api/update-verifier-link`, { link: val.trim() });
         console.log('✅ Host link synced to PD App:', val.trim());
       } catch (err) {
@@ -48,7 +48,7 @@ function PdVerify() {
 
   const fetchList = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5006';
+      const apiUrl = import.meta.env.VITE_API_URL || '';
       const res = await axios.get(`${apiUrl}/api/verification-list`);
       
       // Filter out Approved, Rejected, and system config rows
@@ -75,7 +75,7 @@ function PdVerify() {
 
   const handleAction = async (submissionId, action) => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5006';
+      const apiUrl = import.meta.env.VITE_API_URL || '';
       await axios.post(`${apiUrl}/api/approve-verification`, {
         submissionId,
         type: 'pd',
