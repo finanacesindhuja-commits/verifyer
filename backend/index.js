@@ -500,7 +500,7 @@ const staticPath = path.join(__dirname, '../frontend/dist');
 app.use(express.static(staticPath));
 
 // Fallback for Single Page Application (SPA) routing
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(staticPath, 'index.html'));
 });
 
