@@ -20,8 +20,8 @@ function ApplicationDetails() {
 
   const fetchLoanDetails = async () => {
     try {
-      const res = await axios.get(`${apiUrl}/api/loans`);
-      const found = res.data.find(l => l.id.toString() === id);
+      const res = await axios.get(`${apiUrl}/api/loans/${id}`);
+      const found = res.data;
       setLoan(found);
       if (found?.verification_remarks) setRemarks(found.verification_remarks);
     } catch (err) {

@@ -1091,3 +1091,53 @@ Starting server at 2026-03-25T19:22:10.024Z
 
 --- Starting server at 2026-04-10T02:36:33.129Z ---
 [2026-04-10T02:36:33.337Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T04:17:28.150Z ---
+[2026-04-13T04:17:28.260Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T04:44:16.917Z ---
+[2026-04-13T04:44:16.982Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T04:44:58.894Z ---
+[2026-04-13T04:44:58.950Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T05:23:10.629Z ---
+[2026-04-13T05:23:10.814Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T05:35:00.342Z ---
+[2026-04-13T05:35:00.476Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T06:21:16.114Z ---
+[2026-04-13T06:21:16.234Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T06:23:14.631Z ---
+[2026-04-13T06:23:14.721Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T06:43:55.124Z ---
+[2026-04-13T06:43:55.176Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-04-13T06:50:16.195Z ---
+[2026-04-13T06:50:16.246Z] Main Verifier Backend running on port 5006
+[2026-04-13T06:57:06.401Z] GET /api/loans
+[2026-04-13T06:57:07.435Z] Error fetching loans: column loans.member_no does not exist
+[2026-04-13T06:57:33.299Z] GET /api/loans
+[2026-04-13T06:57:33.783Z] Error fetching loans: column loans.member_no does not exist
+
+--- Starting server at 2026-04-13T06:57:53.352Z ---
+[2026-04-13T06:57:53.403Z] Main Verifier Backend running on port 5006
+[2026-04-13T06:58:04.883Z] GET /api/loans
+[2026-04-13T07:00:56.945Z] GET /api/loans
+[2026-04-13T07:02:33.600Z] GET /api/loans/14
+[2026-04-13T07:02:34.107Z] GET /api/loans/14
+[2026-04-13T07:02:53.771Z] GET /api/loans/14
+[2026-04-13T07:02:54.188Z] GET /api/loans/14
+[2026-04-13T07:02:58.258Z] GET /api/loans
+[2026-04-13T07:02:58.625Z] GET /api/loans
+[2026-04-13T07:03:00.483Z] GET /api/loans/14
+[2026-04-13T07:03:00.717Z] GET /api/loans/14
+[2026-04-13T07:03:02.957Z] GET /api/loans
+[2026-04-13T07:03:03.188Z] GET /api/loans
+[2026-04-13T07:03:19.086Z] GET /api/loans/14
+[2026-04-13T07:03:19.510Z] GET /api/loans/14
+[2026-04-13T07:05:51.991Z] GET /api/loans/14
+[2026-04-13T07:05:53.289Z] GET /api/loans/14

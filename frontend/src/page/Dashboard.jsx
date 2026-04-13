@@ -100,11 +100,11 @@ function Dashboard() {
                       </td>
                       <td className="p-4">
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                            loan.verification_status?.toLowerCase() === 'approved' ? 'bg-green-100 text-green-700' :
-                            loan.verification_status?.toLowerCase() === 'rejected' ? 'bg-red-100 text-red-700' :
+                            loan.status?.toLowerCase() === 'approved' ? 'bg-green-100 text-green-700' :
+                            loan.status?.toLowerCase() === 'rejected' ? 'bg-red-100 text-red-700' :
                             'bg-yellow-100 text-yellow-700'
                           }`}>
-                          {loan.verification_status}
+                          {loan.status}
                         </span>
                       </td>
                       <td className="p-4 text-center">

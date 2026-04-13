@@ -52,15 +52,28 @@ app.use((req, res, next) => {
 // GET all loans
 app.get('/api/loans', async (req, res) => {
   try {
-    const { data: loans, error } = await supabase.from('loans').select('*').order('created_at', { ascending: false });
+    // Optimized: Only fetch necessary fields for dashboard/query list, and limit to recent 500
+    const { data: loans, error } = await supabase
+      .from('loans')
+      .select('id, center_name, center_id, member_name, person_name, aadhar_no, created_at, status, member_id, staff_name, loan_app_id')
+      .order('created_at', { ascending: false })
+      .limit(500);
+      
     if (error) throw error;
 
-    // Fetch all members to map member_no
-    const { data: members, error: memberError } = await supabase.from('members').select('id, member_no');
-    
+    // Fetch members ONLY for the retrieved loans
+    const memberIds = [...new Set(loans.map(l => l.member_id).filter(Boolean))];
     const memberMap = {};
-    if (!memberError && members) {
-      members.forEach(m => memberMap[m.id] = m.member_no);
+    
+    if (memberIds.length > 0) {
+      const { data: members, error: memberError } = await supabase
+        .from('members')
+        .select('id, member_no')
+        .in('id', memberIds);
+        
+      if (!memberError && members) {
+        members.forEach(m => memberMap[m.id] = m.member_no);
+      }
     }
 
     // Use the status column from the loans table as a fallback if verifications table is inaccessible
@@ -73,6 +86,36 @@ app.get('/api/loans', async (req, res) => {
     res.json(mappedLoans);
   } catch (err) {
     log(`Error fetching loans: ${err.message}`);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET single loan by ID
+app.get('/api/loans/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { data: loan, error } = await supabase
+      .from('loans')
+      .select('*')
+      .eq('id', id)
+      .single();
+      
+    if (error) throw error;
+
+    if (loan.member_id) {
+       const { data: member, error: memberError } = await supabase
+         .from('members')
+         .select('member_no')
+         .eq('id', loan.member_id)
+         .single();
+       if (!memberError && member) {
+          loan.member_no = member.member_no || loan.member_no;
+       }
+    }
+    
+    res.json(loan);
+  } catch (err) {
+    log(`Error fetching loan ${req.params.id}: ${err.message}`);
     res.status(500).json({ error: err.message });
   }
 });
@@ -235,11 +278,12 @@ app.get('/api/centers', async (req, res) => {
 app.get('/api/members/:centerId', async (req, res) => {
   const { centerId } = req.params;
   try {
-    // Get all approved loans for this center
+    // Only fetch loans that have been finalized/imported for PD
     const { data: loans, error } = await supabase
       .from('loans')
       .select('member_id, member_name, mobile_no, status')
-      .eq('center_id', centerId);
+      .eq('center_id', centerId)
+      .eq('status', 'READY FOR PD');
     
     if (error) throw error;
 
