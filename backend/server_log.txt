@@ -1141,3 +1141,6 @@ Starting server at 2026-03-25T19:22:10.024Z
 [2026-04-13T07:03:19.510Z] GET /api/loans/14
 [2026-04-13T07:05:51.991Z] GET /api/loans/14
 [2026-04-13T07:05:53.289Z] GET /api/loans/14
+
+--- Starting server at 2026-04-15T11:43:00.380Z ---
+[2026-04-15T11:43:00.490Z] Main Verifier Backend running on port 5006
