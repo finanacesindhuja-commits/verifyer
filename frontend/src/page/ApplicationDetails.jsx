@@ -273,42 +273,44 @@ function ApplicationDetails() {
                 </div>
               )}
               
-              <div className="space-y-6">
-                <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Verification Remarks</label>
-                  <textarea 
-                    value={remarks}
-                    onChange={(e) => setRemarks(e.target.value)}
-                    placeholder="Enter detailed reason for approval or rejection..."
-                    className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-sm focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-500 outline-none transition-all min-h-[160px] resize-none font-medium"
-                    disabled={submitting}
-                  />
-                </div>
+              {(!loan.status || (loan.status.toLowerCase() !== 'approved' && loan.status.toLowerCase() !== 'rejected')) && (
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Verification Remarks</label>
+                    <textarea 
+                      value={remarks}
+                      onChange={(e) => setRemarks(e.target.value)}
+                      placeholder="Enter detailed reason for approval or rejection..."
+                      className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-sm focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-500 outline-none transition-all min-h-[160px] resize-none font-medium"
+                      disabled={submitting}
+                    />
+                  </div>
 
-                <div className="grid grid-cols-1 gap-4 pt-4">
-                  <button 
-                    onClick={() => handleVerify('Approved')}
-                    disabled={submitting}
-                    className="w-full py-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-black transition-all shadow-lg shadow-emerald-200 disabled:opacity-50 active:scale-[0.98] tracking-widest uppercase text-xs"
-                  >
-                    {submitting ? 'PROCESSING...' : 'APPROVE APPLICATION'}
-                  </button>
-                  <button 
-                    onClick={() => handleVerify('Query')}
-                    disabled={submitting}
-                    className="w-full py-5 bg-amber-500 hover:bg-amber-600 text-white rounded-2xl font-black transition-all shadow-lg shadow-amber-200 disabled:opacity-50 active:scale-[0.98] tracking-widest uppercase text-xs"
-                  >
-                    QUERY / REQUEST REPLACEMENT
-                  </button>
-                  <button 
-                    onClick={() => handleVerify('Rejected')}
-                    disabled={submitting}
-                    className="w-full py-4 bg-white border-2 border-rose-100 hover:border-rose-200 text-rose-600 rounded-2xl font-black transition-all disabled:opacity-50 active:scale-[0.98] tracking-widest uppercase text-[10px]"
-                  >
-                    REJECT APPLICATION
-                  </button>
+                  <div className="grid grid-cols-1 gap-4 pt-4">
+                    <button 
+                      onClick={() => handleVerify('Approved')}
+                      disabled={submitting}
+                      className="w-full py-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-black transition-all shadow-lg shadow-emerald-200 disabled:opacity-50 active:scale-[0.98] tracking-widest uppercase text-xs"
+                    >
+                      {submitting ? 'PROCESSING...' : 'APPROVE APPLICATION'}
+                    </button>
+                    <button 
+                      onClick={() => handleVerify('Query')}
+                      disabled={submitting}
+                      className="w-full py-5 bg-amber-500 hover:bg-amber-600 text-white rounded-2xl font-black transition-all shadow-lg shadow-amber-200 disabled:opacity-50 active:scale-[0.98] tracking-widest uppercase text-xs"
+                    >
+                      QUERY / REQUEST REPLACEMENT
+                    </button>
+                    <button 
+                      onClick={() => handleVerify('Rejected')}
+                      disabled={submitting}
+                      className="w-full py-4 bg-white border-2 border-rose-100 hover:border-rose-200 text-rose-600 rounded-2xl font-black transition-all disabled:opacity-50 active:scale-[0.98] tracking-widest uppercase text-[10px]"
+                    >
+                      REJECT APPLICATION
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {loan.verifier_id && (
                 <div className="mt-10 pt-8 border-t border-gray-50">
