@@ -22,8 +22,9 @@ function PdVerify() {
   const [reasons, setReasons] = useState({});
   const [expandedCenters, setExpandedCenters] = useState({});
   const [previewImage, setPreviewImage] = useState(null);
+  const [actioning, setActioning] = useState(null);
   
-  const [hostLink, setHostLink] = useState(() => localStorage.getItem('pd_verifier_host_link') || '');
+  const [hostLink, setHostLink] = useState(() => localStorage.getItem('pd_verifier_host_link') || 'https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1');
   const [showHostInput, setShowHostInput] = useState(false);
 
   const debounceTimer = useRef(null);
@@ -74,6 +75,7 @@ function PdVerify() {
   }, []);
 
   const handleAction = async (submissionId, action) => {
+    setActioning(submissionId);
     try {
       const apiUrl = import.meta.env.VITE_API_URL || '';
       await axios.post(`${apiUrl}/api/approve-verification`, {
@@ -82,7 +84,7 @@ function PdVerify() {
         action,
         reason: reasons[submissionId] || ''
       });
-      fetchList();
+      await fetchList();
       setReasons(prev => {
         const next = { ...prev };
         delete next[submissionId];
@@ -90,6 +92,9 @@ function PdVerify() {
       });
     } catch (err) {
       console.error(`Error actioning PD:`, err);
+      alert('Action failed. Please try again.');
+    } finally {
+      setActioning(null);
     }
   };
 
@@ -225,36 +230,7 @@ function PdVerify() {
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-                      {items.filter(i => i.zoomLink).length > 0 && (
-                        <div className="flex items-center gap-2">
-                          <span className="text-[9px] font-black text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg uppercase tracking-widest">
-                            {items.filter(i => i.zoomLink).length} Link{items.filter(i => i.zoomLink).length > 1 ? 's' : ''}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              const link = items.find(i => i.zoomLink)?.zoomLink;
-                              if (link && link.trim()) {
-                                let url = link.trim();
-                                if (/^\d+$/.test(url)) {
-                                  url = `https://zoom.us/j/${url}`;
-                                } else if (url.includes('.')) {
-                                  if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
-                                } else {
-                                  alert("Invalid Zoom Link.");
-                                  return;
-                                }
-                                window.open(url, '_blank', 'noopener,noreferrer');
-                              }
-                            }}
-                            className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition-all shadow-lg shadow-indigo-100 z-10"
-                          >
-                            <div className="w-4 h-4"><Icons.Video /></div>
-                            <span>Join Zoom</span>
-                          </button>
-                        </div>
-                      )}
+
                       <div className={`p-2 rounded-xl transition-all duration-500 ${isOpen ? 'rotate-180 bg-indigo-100 text-indigo-600' : 'bg-slate-50 text-slate-400'}`}>
                         <div className="w-8 h-8"><Icons.ChevronDown /></div>
                       </div>
@@ -353,45 +329,11 @@ function PdVerify() {
                           </div>
 
                           {/* Decision Sidepanel */}
-                          <div className="w-full xl:w-80 flex flex-col gap-6 bg-slate-50/30 p-8 rounded-[2rem] border border-slate-100">
+                          <div className="w-full xl:w-80 flex flex-col gap-10 bg-slate-50/30 p-8 rounded-[2rem] border border-slate-100">
                             
-                            {/* PD Folder Zoom Link - Auto Redirect */}
-                            {item.zoomLink ? (
-                              <div className="bg-indigo-50 border-2 border-indigo-100 rounded-[1.5rem] p-4 space-y-3">
-                                <div className="flex items-center gap-2">
-                                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                  <span className="text-[9px] font-black text-indigo-500 uppercase tracking-widest">PD Zoom Link Available</span>
-                                </div>
-                                <p className="text-[10px] text-slate-500 font-semibold truncate" title={item.zoomLink}>{item.zoomLink}</p>
-                                <button
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    let url = item.zoomLink.trim();
-                                    if (/^\d+$/.test(url)) {
-                                      url = `https://zoom.us/j/${url}`;
-                                    } else if (url.includes('.')) {
-                                      if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
-                                    } else {
-                                      alert('Invalid Zoom Link in PD folder.');
-                                      return;
-                                    }
-                                    window.open(url, '_blank', 'noopener,noreferrer');
-                                  }}
-                                  className="w-full flex items-center justify-center gap-2 py-3 bg-indigo-600 text-white rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition-all duration-300 shadow-lg shadow-indigo-200"
-                                >
-                                  <div className="w-4 h-4"><Icons.Video /></div>
-                                  <span>Open PD Zoom</span>
-                                </button>
-                              </div>
-                            ) : (
-                              <div className="bg-slate-100 border border-slate-200 rounded-[1.5rem] p-4 flex items-center gap-3">
-                                <div className="w-2 h-2 rounded-full bg-slate-300"></div>
-                                <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">No Zoom Link in PD Folder</span>
-                              </div>
-                            )}
 
-                            <div className="space-y-4 flex-1">
+
+                            <div className="space-y-4">
                               <label className="text-[11px] font-black text-slate-500 uppercase tracking-widest flex items-center justify-between">
                                 Verifier Remarks
                                 <span className="text-[9px] text-slate-300 font-bold uppercase">(Optional)</span>
@@ -408,15 +350,27 @@ function PdVerify() {
                               <button
                                 type="button"
                                 onClick={(e) => { e.preventDefault(); handleAction(item.id, 'approve'); }}
-                                className="group/btn relative overflow-hidden py-5 bg-indigo-600 text-white rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-[11px] hover:bg-slate-900 transition-all duration-300 shadow-2xl shadow-indigo-200 flex items-center justify-center gap-3"
+                                disabled={!!actioning}
+                                className={`group/btn relative overflow-hidden py-5 rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-[11px] transition-all duration-300 shadow-2xl flex items-center justify-center gap-3 ${
+                                  actioning === item.id 
+                                    ? 'bg-slate-800 text-white cursor-not-allowed' 
+                                    : 'bg-emerald-600 text-white hover:bg-slate-900 shadow-emerald-200'
+                                }`}
                               >
-                                <span>Final Approval</span>
-                                <div className="w-4 h-4 group-hover/btn:scale-125 transition-transform"><Icons.CheckCircle2 /></div>
+                                <span>{actioning === item.id ? 'Processing...' : 'Final Approval'}</span>
+                                <div className={`w-4 h-4 ${actioning === item.id ? 'animate-spin' : 'group-hover/btn:scale-125 transition-transform'}`}>
+                                  {actioning === item.id ? <Icons.Loader2 /> : <Icons.CheckCircle2 />}
+                                </div>
                               </button>
                               <button 
                                 type="button"
                                 onClick={(e) => { e.preventDefault(); handleAction(item.id, 'reject'); }}
-                                className="py-5 bg-white text-rose-600 border-2 border-rose-100 rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-[11px] hover:bg-rose-50 hover:border-rose-200 transition-all duration-300 flex items-center justify-center gap-3"
+                                disabled={!!actioning}
+                                className={`py-5 border-2 rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-[11px] transition-all duration-300 flex items-center justify-center gap-3 ${
+                                  actioning === item.id
+                                    ? 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
+                                    : 'bg-white text-rose-600 border-rose-100 hover:bg-rose-50 hover:border-rose-200'
+                                }`}
                               >
                                 <span>Reject Record</span>
                                 <div className="w-4 h-4"><Icons.XCircle /></div>
