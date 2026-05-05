@@ -281,8 +281,30 @@ function PdVerify() {
                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                                 </div>
                                 <div className="space-y-0.5">
-                                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Submitted By (Staff)</p>
-                                  <p className="text-2xl font-black text-slate-950 leading-none">{item.staffName} <span className="text-xs text-indigo-600">[{item.staffId}]</span></p>
+                                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Submitted By</p>
+                                  <p className="text-lg font-black text-slate-950 leading-none">{item.staffName}</p>
+                                </div>
+                              </div>
+                              <div className="h-10 w-px bg-slate-200 hidden xl:block"></div>
+                              <div className="flex items-center gap-4">
+                                <div className="p-3 bg-white rounded-2xl shadow-sm text-rose-500">
+                                  <div className="w-5 h-5"><Icons.MapPin /></div>
+                                </div>
+                                <div className="space-y-0.5">
+                                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Live Location</p>
+                                  {item.location && item.location !== 'N/A' ? (
+                                    <a 
+                                      href={`https://www.google.com/maps?q=${item.location}`} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="text-sm font-black text-rose-600 hover:text-rose-700 underline underline-offset-4 flex items-center gap-1.5"
+                                    >
+                                      View on Map
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    </a>
+                                  ) : (
+                                    <p className="text-sm font-black text-slate-300">Not Available</p>
+                                  )}
                                 </div>
                               </div>
                             </div>

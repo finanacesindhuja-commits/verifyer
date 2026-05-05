@@ -370,6 +370,7 @@ app.get('/api/verification-list', async (req, res) => {
         appId: memberMap[sub.member_id] || (loan ? loan.loan_app_id || loan.id : sub.member_id),
         homeImage: sub.home_image,
         sideImage: sub.side_image, 
+        location: sub.location,
         zoomLink: sub.zoom_link,
         staffId: sub.staff_id,
         staffName: loan ? loan.staff_name : `Officer ${sub.staff_id}`,
