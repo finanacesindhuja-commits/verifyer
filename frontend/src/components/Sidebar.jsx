@@ -1,12 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import axios from 'axios';
 
 function Sidebar({ children }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [stats, setStats] = useState({
+    loanVerifyCount: 0,
+    pdVerifyCount: 0,
+    queryCount: 0
+  });
+
+  useEffect(() => {
+    fetchStats();
+    
+    // Listen for custom event to refresh stats immediately
+    const handleRefresh = () => fetchStats();
+    window.addEventListener('refresh-stats', handleRefresh);
+    
+    const interval = setInterval(fetchStats, 30000); // Refresh every 30 seconds
+    
+    return () => {
+      window.removeEventListener('refresh-stats', handleRefresh);
+      clearInterval(interval);
+    };
+  }, []);
+
+  const fetchStats = async () => {
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || '';
+      const res = await axios.get(`${apiUrl}/api/stats`);
+      setStats(res.data);
+    } catch (err) {
+      console.error('Failed to fetch stats:', err);
+    }
+  };
 
   const handleLogout = () => {
     logout();
@@ -17,11 +48,23 @@ function Sidebar({ children }) {
 
   const navItemClass = (path) => {
     const isActive = location.pathname === path;
-    return `flex items-center px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
+    return `flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
       isActive
         ? 'bg-indigo-600 text-white shadow-lg'
         : 'text-indigo-200 hover:bg-indigo-800/50 hover:text-white'
     }`;
+  };
+
+  const CountBadge = ({ count, color = "bg-rose-500" }) => {
+    if (!count || count <= 0) return null;
+    return (
+      <span className="relative flex items-center">
+        <span className={`absolute inline-flex h-full w-full rounded-full ${color} opacity-20 animate-ping`}></span>
+        <span className={`relative inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 py-0.5 text-[10px] font-black leading-none text-white ${color} rounded-full border border-white/20 shadow-sm`}>
+          {count > 99 ? '99+' : count}
+        </span>
+      </span>
+    );
   };
 
   return (
@@ -53,10 +96,13 @@ function Sidebar({ children }) {
               onClick={() => setIsOpen(false)}
               className={navItemClass('/dashboard')}
             >
-              <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-              Loan Application Verify
+              <div className="flex items-center">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Loan Verify
+              </div>
+              <CountBadge count={stats.loanVerifyCount} />
             </NavLink>
 
             <NavLink
@@ -64,10 +110,13 @@ function Sidebar({ children }) {
               onClick={() => setIsOpen(false)}
               className={navItemClass('/pd-verify')}
             >
-              <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              PD Verify
+              <div className="flex items-center">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                PD Verify
+              </div>
+              <CountBadge count={stats.pdVerifyCount} />
             </NavLink>
 
             <NavLink
@@ -75,10 +124,13 @@ function Sidebar({ children }) {
               onClick={() => setIsOpen(false)}
               className={navItemClass('/query')}
             >
-              <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Query
+              <div className="flex items-center">
+                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Query
+              </div>
+              <CountBadge count={stats.queryCount} color="bg-amber-500" />
             </NavLink>
           </nav>
         </div>

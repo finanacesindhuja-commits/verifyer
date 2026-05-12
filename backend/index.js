@@ -49,6 +49,48 @@ app.use((req, res, next) => {
   next();
 });
 
+// GET stats for sidebar
+app.get('/api/stats', async (req, res) => {
+  try {
+    // 1. Get Loan Verification Count (Pending or Under Review)
+    const { data: loans, error: loanError } = await supabase
+      .from('loans')
+      .select('status');
+    
+    if (loanError) throw loanError;
+
+    const loanVerifyCount = loans.filter(l => {
+      const s = l.status?.toLowerCase();
+      return !s || s === 'pending' || s === 'under review';
+    }).length;
+
+    const queryCount = loans.filter(l => l.status?.toUpperCase() === 'QUERY').length;
+
+    // 2. Get PD Verification Count (Pending PD Verification)
+    const { data: pds, error: pdError } = await supabase
+      .from('pd_verifications')
+      .select('status, center_id');
+
+    if (pdError) throw pdError;
+
+    const pdVerifyCount = pds.filter(s => 
+      s.status !== 'Approved' && 
+      !String(s.status).startsWith('Approved') &&
+      !String(s.status).startsWith('Rejected') &&
+      s.center_id !== '__config__'
+    ).length;
+
+    res.json({
+      loanVerifyCount,
+      pdVerifyCount,
+      queryCount
+    });
+  } catch (err) {
+    log(`Error fetching stats: ${err.message}`);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // GET all loans
 app.get('/api/loans', async (req, res) => {
   try {

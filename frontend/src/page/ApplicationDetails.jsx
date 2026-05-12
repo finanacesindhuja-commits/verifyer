@@ -41,6 +41,7 @@ function ApplicationDetails() {
         staffId: user.staff_id
       });
       alert(`Application ${status} successfully!`);
+      window.dispatchEvent(new CustomEvent('refresh-stats'));
       navigate('/dashboard');
     } catch (err) {
       alert('Failed to update verification status.');
@@ -70,6 +71,7 @@ function ApplicationDetails() {
       setRemarks(structuredRemarks);
       // We also update the loan object to trigger any UI updates like status badges
       setLoan(prev => ({...prev, status: 'Query', verification_remarks: structuredRemarks}));
+      window.dispatchEvent(new CustomEvent('refresh-stats'));
       
     } catch (err) {
       console.error('Failed to send query:', err);

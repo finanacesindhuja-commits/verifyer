@@ -85,6 +85,7 @@ function PdVerify() {
         reason: reasons[submissionId] || ''
       });
       await fetchList();
+      window.dispatchEvent(new CustomEvent('refresh-stats'));
       setReasons(prev => {
         const next = { ...prev };
         delete next[submissionId];
