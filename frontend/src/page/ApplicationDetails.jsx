@@ -275,7 +275,8 @@ function ApplicationDetails() {
                 </div>
               )}
               
-              {(!loan.status || (loan.status.toLowerCase() !== 'approved' && loan.status.toLowerCase() !== 'rejected')) && (
+              {/* Show action panel only if status is pending, under review, or query */}
+              {( !loan.status || ['pending', 'under review', 'query'].includes(loan.status.toLowerCase()) ) && (
                 <div className="space-y-6">
                   <div>
                     <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Verification Remarks</label>
