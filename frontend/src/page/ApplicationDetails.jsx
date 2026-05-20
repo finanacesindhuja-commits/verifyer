@@ -121,6 +121,7 @@ function ApplicationDetails() {
           <div className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border ${
             loan.status?.toLowerCase() === 'approved' ? 'bg-emerald-50 text-emerald-600 border-emerald-100' :
             loan.status?.toLowerCase() === 'rejected' ? 'bg-rose-50 text-rose-600 border-rose-100' : 
+            loan.status?.toLowerCase() === 'resubmitted' ? 'bg-indigo-50 text-indigo-600 border-indigo-100' :
             'bg-amber-50 text-amber-600 border-amber-100'
           }`}>
             {loan.status || 'Pending'}
@@ -212,7 +213,7 @@ function ApplicationDetails() {
                   { label: 'Field Verification Form', url: loan.form_image_url, field: 'form_image_url' },
                   { label: 'Applicant Signature', url: loan.signature_url, field: 'signature_url' }
                 ].map((doc, i) => {
-                  const isReceived = doc.url?.includes('replacements/');
+                  const isReceived = doc.url?.includes('replacements/') || doc.url?.includes('-replaced-');
                   return doc.url && (
                     <div key={i} className={`group flex flex-col p-4 rounded-[2rem] border-2 transition-all ${isReceived ? 'bg-emerald-50/30 border-emerald-200' : 'border-transparent'}`}>
                       <div className="flex items-center justify-between mb-3 px-1">
@@ -259,14 +260,16 @@ function ApplicationDetails() {
 
               {loan.status && loan.status.toLowerCase() !== 'pending' && (
                 <div className={`mb-6 p-4 rounded-2xl border ${
-                  loan.status.toLowerCase() === 'approved' ? 'bg-emerald-50 border-emerald-100' :
-                  loan.status.toLowerCase() === 'rejected' ? 'bg-rose-50 border-rose-100' :
-                  'bg-amber-50 border-amber-100'
+                  loan.status.toLowerCase() === 'approved' ? 'bg-emerald-50 text-emerald-600 border-emerald-100' :
+                  loan.status.toLowerCase() === 'rejected' ? 'bg-rose-50 text-rose-600 border-rose-100' :
+                  loan.status.toLowerCase() === 'resubmitted' ? 'bg-indigo-50 text-indigo-600 border-indigo-100' :
+                  'bg-amber-50 text-amber-600 border-amber-100'
                 }`}>
                   <p className="text-[10px] font-black opacity-50 uppercase tracking-widest mb-1">Current Status</p>
                   <p className={`text-sm font-black uppercase ${
                     loan.status.toLowerCase() === 'approved' ? 'text-emerald-700' :
                     loan.status.toLowerCase() === 'rejected' ? 'text-rose-700' :
+                    loan.status.toLowerCase() === 'resubmitted' ? 'text-indigo-700' :
                     'text-amber-700'
                   }`}>{loan.status}</p>
                   {loan.verification_remarks && (
@@ -275,8 +278,8 @@ function ApplicationDetails() {
                 </div>
               )}
               
-              {/* Show action panel only if status is pending, under review, or query */}
-              {( !loan.status || ['pending', 'under review', 'query'].includes(loan.status.toLowerCase()) ) && (
+              {/* Show action panel only if status is pending, under review, query, or resubmitted */}
+              {( !loan.status || ['pending', 'under review', 'query', 'resubmitted'].includes(loan.status.toLowerCase()) ) && (
                 <div className="space-y-6">
                   <div>
                     <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Verification Remarks</label>

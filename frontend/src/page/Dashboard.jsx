@@ -42,7 +42,7 @@ function Dashboard() {
     acc[center].totalCount += 1;
     // Consider empty status, pending, or under review as new/pending
     const status = loan.status?.toLowerCase();
-    if (!status || status === 'pending' || status === 'under review') {
+    if (!status || status === 'pending' || status === 'under review' || status === 'resubmitted') {
       acc[center].pendingCount += 1;
     }
     return acc;
@@ -162,6 +162,7 @@ function Dashboard() {
                                 <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                                     loan.status?.toLowerCase() === 'approved' ? 'bg-green-100 text-green-700' :
                                     loan.status?.toLowerCase() === 'rejected' ? 'bg-red-100 text-red-700' :
+                                    loan.status?.toLowerCase() === 'resubmitted' ? 'bg-indigo-100 text-indigo-700' :
                                     'bg-yellow-100 text-yellow-700'
                                   }`}>
                                   {loan.status || 'Pending'}

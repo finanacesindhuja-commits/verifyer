@@ -241,9 +241,10 @@ app.post('/api/loans/:id/replace-document', upload.single('document'), async (re
        }
     }
 
-    // 4. Update the DB
+    // 4. Update the DB and set status to RESUBMITTED
     const updatePayload = {};
     updatePayload[field] = publicUrl;
+    updatePayload['status'] = 'RESUBMITTED';
     
     const { error: updateError } = await supabase
       .from('loans')
