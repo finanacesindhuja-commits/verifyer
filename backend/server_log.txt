@@ -37,3 +37,22 @@
 
 --- Starting server at 2026-05-20T17:05:58.214Z ---
 [2026-05-20T17:05:58.287Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-05-21T13:03:03.258Z ---
+[2026-05-21T13:03:03.329Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-05-21T13:11:39.888Z ---
+[2026-05-21T13:11:39.995Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-05-21T13:17:29.012Z ---
+[2026-05-21T13:17:29.016Z] ERROR: Supabase credentials missing! Exiting.
+
+--- Starting server at 2026-05-21T13:17:38.448Z ---
+[2026-05-21T13:17:38.502Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-05-21T13:27:05.848Z ---
+[2026-05-21T13:27:05.900Z] Main Verifier Backend running on port 5006
+[2026-05-21T13:27:05.901Z] Failed to start server: listen EADDRINUSE: address already in use 0.0.0.0:5006
+
+--- Starting server at 2026-05-21T13:28:40.601Z ---
+[2026-05-21T13:28:40.660Z] Main Verifier Backend running on port 5006
