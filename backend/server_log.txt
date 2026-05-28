@@ -56,3 +56,9 @@
 
 --- Starting server at 2026-05-21T13:28:40.601Z ---
 [2026-05-21T13:28:40.660Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-05-21T13:55:22.042Z ---
+[2026-05-21T13:55:22.089Z] Main Verifier Backend running on port 5006
+
+--- Starting server at 2026-05-26T15:57:53.847Z ---
+[2026-05-26T15:57:53.870Z] ERROR: Supabase credentials missing! Exiting.

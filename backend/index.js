@@ -1,4 +1,6 @@
 const express = require('express');
+const compression = require('compression');
+const NodeCache = require('node-cache');
 const cors = require('cors');
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
@@ -17,6 +19,25 @@ const log = (msg) => {
 fs.appendFileSync(logFile, `\n--- Starting server at ${new Date().toISOString()} ---\n`);
 
 const app = express();
+
+const cache = new NodeCache({ stdTTL: 15 });
+const flushCache = () => cache.flushAll();
+const cacheMiddleware = (duration = 15) => (req, res, next) => {
+  if (req.method !== 'GET') return next();
+  const key = req.originalUrl;
+  const cachedResponse = cache.get(key);
+  if (cachedResponse) return res.json(cachedResponse);
+  res.sendResponse = res.json;
+  res.json = (body) => {
+    if (res.statusCode >= 200 && res.statusCode < 300) {
+      cache.set(key, body, duration);
+    }
+    res.sendResponse(body);
+  };
+  next();
+};
+
+app.use(compression());
 const allowedOrigin = process.env.ALLOWED_ORIGIN || '*';
 app.use(cors({
   origin: allowedOrigin,
@@ -50,7 +71,7 @@ app.use((req, res, next) => {
 });
 
 // GET stats for sidebar
-app.get('/api/stats', async (req, res) => {
+app.get('/api/stats', cacheMiddleware(10), async (req, res) => {
   try {
     // 1. Get Loan Verification Count (Pending or Under Review)
     const { data: loans, error: loanError } = await supabase
@@ -92,7 +113,7 @@ app.get('/api/stats', async (req, res) => {
 });
 
 // GET all loans
-app.get('/api/loans', async (req, res) => {
+app.get('/api/loans', cacheMiddleware(10), async (req, res) => {
   try {
     // Optimized: Only fetch necessary fields for dashboard/query list, and limit to recent 500
     const { data: loans, error } = await supabase
@@ -133,7 +154,7 @@ app.get('/api/loans', async (req, res) => {
 });
 
 // GET single loan by ID
-app.get('/api/loans/:id', async (req, res) => {
+app.get('/api/loans/:id', cacheMiddleware(10), async (req, res) => {
   try {
     const { id } = req.params;
     const { data: loan, error } = await supabase
@@ -292,7 +313,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // GET all unique centers from loans table
-app.get('/api/centers', async (req, res) => {
+app.get('/api/centers', cacheMiddleware(10), async (req, res) => {
   try {
     const { data, error } = await supabase
       .from('loans')
