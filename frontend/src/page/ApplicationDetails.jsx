@@ -165,6 +165,7 @@ function ApplicationDetails() {
                 <DetailItem label="Annual Income" value={loan.annual_income ? `₹${loan.annual_income}` : null} />
                 <DetailItem label="Address" value={loan.address} />
                 <DetailItem label="Pincode" value={loan.pincode} />
+                <DetailItem label="House Type" value={loan.house_type} />
                 <DetailItem label="Phone Number" value={loan.mobile_no} />
                 <DetailItem label="Email Address" value={loan.member_email} />
                 <DetailItem label="First Cycle RG Number" value={loan.firstCycleRgNumber || loan.first_cycle_rg_number} />

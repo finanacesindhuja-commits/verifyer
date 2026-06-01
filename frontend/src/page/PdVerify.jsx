@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
 
+const AUTO_REFRESH_SECONDS = 30;
+
 // Inline SVG Icons for better reliability
 const Icons = {
   ChevronDown: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>,
@@ -23,11 +25,29 @@ function PdVerify() {
   const [expandedCenters, setExpandedCenters] = useState({});
   const [previewImage, setPreviewImage] = useState(null);
   const [actioning, setActioning] = useState(null);
+  const [countdown, setCountdown] = useState(AUTO_REFRESH_SECONDS);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   
   const [hostLink, setHostLink] = useState(() => localStorage.getItem('pd_verifier_host_link') || 'https://us05web.zoom.us/j/81590508765?pwd=8POi2joWuuMPyBkY4dMI4qLiRFtQ9f.1');
   const [showHostInput, setShowHostInput] = useState(false);
 
   const debounceTimer = useRef(null);
+  const countdownRef = useRef(null);
+  const refreshRef = useRef(null);
+
+  const startCountdown = useCallback(() => {
+    setCountdown(AUTO_REFRESH_SECONDS);
+    if (countdownRef.current) clearInterval(countdownRef.current);
+    countdownRef.current = setInterval(() => {
+      setCountdown(prev => {
+        if (prev <= 1) {
+          clearInterval(countdownRef.current);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }, []);
 
   const updateHostLink = useCallback(async (val) => {
     setHostLink(val);
@@ -47,7 +67,8 @@ function PdVerify() {
     }, 800);
   }, []);
 
-  const fetchList = async () => {
+  const fetchList = async (isAuto = false) => {
+    if (isAuto) setIsRefreshing(true);
     try {
       const apiUrl = import.meta.env.VITE_API_URL || '';
       const res = await axios.get(`${apiUrl}/api/verification-list`);
@@ -63,15 +84,38 @@ function PdVerify() {
       console.error('Failed to fetch PD verification list:', err);
     } finally {
       setLoading(false);
+      setIsRefreshing(false);
     }
+  };
+
+  const handleManualRefresh = () => {
+    fetchList(false);
+    startCountdown();
+    if (refreshRef.current) clearInterval(refreshRef.current);
+    refreshRef.current = setInterval(() => {
+      fetchList(true);
+      startCountdown();
+    }, AUTO_REFRESH_SECONDS * 1000);
   };
 
   useEffect(() => {
     fetchList();
+    startCountdown();
     // Auto-sync host link to backend on page load
     if (hostLink) {
       updateHostLink(hostLink);
     }
+
+    // Auto-refresh every 30 seconds
+    refreshRef.current = setInterval(() => {
+      fetchList(true);
+      startCountdown();
+    }, AUTO_REFRESH_SECONDS * 1000);
+
+    return () => {
+      clearInterval(refreshRef.current);
+      clearInterval(countdownRef.current);
+    };
   }, []);
 
   const handleAction = async (submissionId, action) => {
@@ -131,7 +175,29 @@ function PdVerify() {
           </div>
           
           <div className="md:ml-16 mt-4 flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-slate-500 font-medium text-center md:text-left">Select a center below to review pending member verifications.</p>
+            <div className="flex flex-col md:flex-row items-center gap-3">
+              <p className="text-slate-500 font-medium text-center md:text-left">Select a center below to review pending member verifications.</p>
+              {/* Auto-Refresh Badge */}
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 px-3 py-2 bg-emerald-50 rounded-2xl border border-emerald-100">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-xs font-black text-emerald-700 uppercase tracking-wider">
+                    {isRefreshing ? 'Updating...' : `Auto Refresh: ${countdown}s`}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleManualRefresh}
+                  title="Refresh Now"
+                  className={`p-2 rounded-xl bg-white border border-slate-200 text-indigo-600 hover:bg-indigo-50 hover:border-indigo-200 shadow-sm transition-all active:scale-90 ${isRefreshing ? 'animate-spin' : ''}`}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                </button>
+              </div>
+            </div>
             
             {/* CENTRAL HOSTING CONTROLS */}
             <div className="bg-white border-2 border-indigo-100 p-2.5 rounded-2xl flex items-center gap-3 shadow-xl shadow-indigo-100/50 group/zoom">
