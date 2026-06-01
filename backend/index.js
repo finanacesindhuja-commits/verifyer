@@ -586,13 +586,12 @@ app.post('/staff/login', async (req, res) => {
     const { data: staff, error } = await supabase
       .from('staff')
       .select('*')
-      .eq('staff_id', staff_id?.toUpperCase())
-      .eq('password', password)
-      .ilike('role', 'verifier')
+      .eq('staff_id', String(staff_id || '').trim().toUpperCase())
+      .eq('password', String(password || '').trim())
       .single();
 
-    if (error || !staff) {
-      log(`Login FAILED for ${staff_id}: ${error ? error.message : 'User not found or role mismatch'}`);
+    if (error || !staff || staff.role?.toLowerCase() !== 'verifier') {
+      log(`Login FAILED for ${staff_id}: ${error ? error.message : (!staff ? 'User not found' : 'Role mismatch: expected verifier, got ' + staff.role)}`);
       return res.status(401).json({ error: 'Invalid Staff ID or password' });
     }
 
