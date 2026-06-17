@@ -208,7 +208,7 @@ function Dashboard() {
                             <tr key={loan.id} className="hover:bg-gray-50 transition">
                               <td className="p-3">
                                 <span className="text-xs font-black text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md ring-1 ring-indigo-100">
-                                  {loan.member_no || loan.loan_app_id || 'N/A'}
+                                  {loan.member_no || 'N/A'}
                                 </span>
                               </td>
                               <td className="p-3 font-medium text-gray-900">{loan.person_name || loan.member_name}</td>

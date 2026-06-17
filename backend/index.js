@@ -118,7 +118,7 @@ app.get('/api/loans', cacheMiddleware(10), async (req, res) => {
     // Optimized: Only fetch necessary fields for dashboard/query list, and limit to recent 500
     const { data: loans, error } = await supabase
       .from('loans')
-      .select('id, center_name, center_id, member_name, person_name, aadhar_no, created_at, status, member_id, staff_name, loan_app_id')
+      .select('id, center_name, center_id, member_name, person_name, aadhar_no, created_at, status, member_id, staff_name')
       .order('created_at', { ascending: false })
       .limit(500);
       
@@ -420,7 +420,7 @@ app.get('/api/verification-list', async (req, res) => {
       // Find the loan for this member/center to get the names and staff info
       const { data: loanData } = await supabase
         .from('loans')
-        .select('id, center_name, member_name, staff_name, loan_app_id')
+        .select('id, center_name, member_name, staff_name')
         .eq('member_id', sub.member_id)
         .eq('center_id', sub.center_id)
         .limit(1);
@@ -431,7 +431,7 @@ app.get('/api/verification-list', async (req, res) => {
         id: sub.id,
         centerId: sub.center_id,
         memberId: sub.member_id,
-        appId: memberMap[sub.member_id] || (loan ? loan.loan_app_id || loan.id : sub.member_id),
+        appId: memberMap[sub.member_id] || (loan ? loan.id : sub.member_id),
         homeImage: sub.home_image,
         sideImage: sub.side_image, 
         location: sub.location,
@@ -504,7 +504,7 @@ app.post('/api/approve-verification', async (req, res) => {
           member_id: targetMemberId, 
           center_id: targetCenterId
         })
-        .or('status.eq.PENDING,status.eq.Pending PD Verification') // Target the active loan
+        .or('status.eq.PENDING,status.eq.pending,status.eq.READY FOR PD,status.eq.Pending PD Verification') // Target the active loan
         .select();
       
       if (loanUpdateError) {
