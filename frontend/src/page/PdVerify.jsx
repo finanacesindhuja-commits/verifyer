@@ -19,7 +19,8 @@ const Icons = {
 };
 
 function PdVerify() {
-  const [list, setList] = useState([]);
+  const [allData, setAllData] = useState([]);
+  const [activeTab, setActiveTab] = useState('pending'); // 'pending' or 'approved'
   const [loading, setLoading] = useState(true);
   const [reasons, setReasons] = useState({});
   const [expandedCenters, setExpandedCenters] = useState({});
@@ -73,13 +74,8 @@ function PdVerify() {
       const apiUrl = import.meta.env.VITE_API_URL || '';
       const res = await axios.get(`${apiUrl}/api/verification-list`);
       
-      // Filter out Approved, Rejected, and system config rows
-      setList(res.data.filter(s => 
-        s.status !== 'Approved' && 
-        !String(s.status).startsWith('Approved') &&
-        !String(s.status).startsWith('Rejected') &&
-        s.centerId !== '__config__'
-      ));
+      // Filter out system config rows, keep everything else
+      setAllData(res.data.filter(s => s.centerId !== '__config__'));
     } catch (err) {
       console.error('Failed to fetch PD verification list:', err);
     } finally {
@@ -118,6 +114,27 @@ function PdVerify() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!loading && allData.length > 0) {
+      const pendingCount = allData.filter(s => 
+        s.status !== 'Approved' && 
+        !String(s.status).startsWith('Approved') &&
+        !String(s.status).startsWith('Rejected')
+      ).length;
+
+      const approvedCount = allData.filter(s => 
+        s.pdVerified === true ||
+        s.status === 'Approved' ||
+        String(s.status).startsWith('Approved')
+      ).length;
+
+      // Auto-switch to approved if pending is 0 and we have approved items
+      if (pendingCount === 0 && approvedCount > 0) {
+        setActiveTab('approved');
+      }
+    }
+  }, [allData, loading]);
+
   const handleAction = async (submissionId, action) => {
     setActioning(submissionId);
     try {
@@ -150,8 +167,23 @@ function PdVerify() {
     }));
   };
 
+  // Filter lists based on tab
+  const pendingList = allData.filter(s => 
+    s.status !== 'Approved' && 
+    !String(s.status).startsWith('Approved') &&
+    !String(s.status).startsWith('Rejected')
+  );
+
+  const approvedList = allData.filter(s => 
+    s.pdVerified === true ||
+    s.status === 'Approved' ||
+    String(s.status).startsWith('Approved')
+  );
+
+  const currentDisplayList = activeTab === 'approved' ? approvedList : pendingList;
+
   // Group the list by center
-  const groupedList = list.reduce((acc, item) => {
+  const groupedList = currentDisplayList.reduce((acc, item) => {
     const centerName = item.centerName || `Center ${item.centerId}`;
     if (!acc[centerName]) {
       acc[centerName] = [];
@@ -251,18 +283,62 @@ function PdVerify() {
           </div>
         </header>
 
+        {/* Tab Switcher */}
+        <div className="flex bg-slate-200/50 p-1.5 rounded-2xl mb-8 w-full shadow-inner">
+          <button
+            onClick={() => setActiveTab('pending')}
+            className={`flex flex-1 items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all duration-200 ${
+              activeTab === 'pending'
+                ? 'bg-indigo-600 text-white shadow-md'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            Pending Verifications
+            <span className={`px-3 py-1 rounded-full text-xs font-black ${
+              activeTab === 'pending'
+                ? 'bg-white/20 text-white'
+                : 'bg-slate-300 text-slate-700'
+            }`}>
+              {pendingList.length}
+            </span>
+          </button>
+          <button
+            onClick={() => setActiveTab('approved')}
+            className={`flex flex-1 items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all duration-200 ${
+              activeTab === 'approved'
+                ? 'bg-indigo-600 text-white shadow-md'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            Approved Verifications
+            <span className={`px-3 py-1 rounded-full text-xs font-black ${
+              activeTab === 'approved'
+                ? 'bg-white/20 text-white'
+                : 'bg-slate-300 text-slate-700'
+            }`}>
+              {approvedList.length}
+            </span>
+          </button>
+        </div>
+
         {loading ? (
           <div className="flex flex-col items-center justify-center p-20 space-y-4">
             <div className="w-12 h-12 text-indigo-600 animate-spin"><Icons.Loader2 /></div>
             <span className="text-slate-500 font-bold tracking-widest uppercase text-xs">Accessing Database...</span>
           </div>
-        ) : list.length === 0 ? (
-          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-20 text-center">
+        ) : currentDisplayList.length === 0 ? (
+          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-20 text-center animate-in fade-in duration-300">
             <div className="inline-flex p-6 bg-slate-50 rounded-full mb-6 text-slate-300">
               <div className="w-12 h-12"><Icons.CheckCircle2 /></div>
             </div>
-            <h3 className="text-2xl font-black text-slate-800 mb-2">Perfect Score!</h3>
-            <p className="text-slate-400 font-medium">No pending PD verifications require your attention right now.</p>
+            <h3 className="text-2xl font-black text-slate-800 mb-2">
+              {activeTab === 'approved' ? 'No Approved Verifications' : 'Perfect Score!'}
+            </h3>
+            <p className="text-slate-400 font-medium">
+              {activeTab === 'approved' 
+                ? 'Approved verifications will appear here once you approve them.' 
+                : 'No pending PD verifications require your attention right now.'}
+            </p>
           </div>
         ) : (
           <div className="space-y-4 lg:space-y-6">
@@ -278,27 +354,46 @@ function PdVerify() {
                     className={`w-full flex items-center justify-between p-6 text-left transition-all duration-300 cursor-pointer select-none ${isOpen ? 'bg-indigo-50/30' : 'hover:bg-slate-50'}`}
                   >
                     <div className="flex items-center gap-5">
-                      <div className={`p-3 rounded-2xl transition-all duration-300 ${isOpen ? 'bg-indigo-600 text-white animate-pulse' : 'bg-slate-100 text-slate-400'}`}>
+                      <div className={`p-3 rounded-2xl transition-all duration-300 ${
+                        isOpen 
+                          ? (activeTab === 'approved' ? 'bg-emerald-600 text-white' : 'bg-indigo-600 text-white animate-pulse') 
+                          : 'bg-slate-100 text-slate-400'
+                      }`}>
                         <div className="w-6 h-6"><Icons.MapPin /></div>
                       </div>
                       <div>
-                        <h2 className={`text-2xl font-black transition-colors ${isOpen ? 'text-indigo-900' : 'text-slate-800'}`}>
+                        <h2 className={`text-2xl font-black transition-colors ${
+                          isOpen 
+                            ? (activeTab === 'approved' ? 'text-emerald-900' : 'text-indigo-900') 
+                            : 'text-slate-800'
+                        }`}>
                           {centerName}
                         </h2>
                         <div className="flex items-center gap-2 mt-1">
-                          <span className={`text-[10px] font-black uppercase tracking-widest p-1.5 rounded-lg ${isOpen ? 'bg-indigo-600 text-white' : 'bg-slate-800 text-white'}`}>
-                             {items.length} {items.length === 1 ? 'Action Required' : 'Actions Required'}
+                          <span className={`text-[10px] font-black uppercase tracking-widest p-1.5 rounded-lg ${
+                            isOpen 
+                              ? (activeTab === 'approved' ? 'bg-emerald-600 text-white' : 'bg-indigo-600 text-white') 
+                              : 'bg-slate-800 text-white'
+                          }`}>
+                            {activeTab === 'approved' 
+                              ? `${items.length} Approved`
+                              : `${items.length} ${items.length === 1 ? 'Action Required' : 'Actions Required'}`}
                           </span>
-                          <div className="flex items-center gap-1.5 text-[8px] font-black bg-emerald-500/10 text-emerald-600 px-2 py-1.5 rounded-lg">
-                            <div className="w-1 h-1 bg-emerald-500 rounded-full animate-ping"></div>
-                            LIVE PD ACTIVE
-                          </div>
+                          {activeTab === 'pending' && (
+                            <div className="flex items-center gap-1.5 text-[8px] font-black bg-emerald-500/10 text-emerald-600 px-2 py-1.5 rounded-lg">
+                              <div className="w-1 h-1 bg-emerald-500 rounded-full animate-ping"></div>
+                              LIVE PD ACTIVE
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-
-                      <div className={`p-2 rounded-xl transition-all duration-500 ${isOpen ? 'rotate-180 bg-indigo-100 text-indigo-600' : 'bg-slate-50 text-slate-400'}`}>
+                      <div className={`p-2 rounded-xl transition-all duration-500 ${
+                        isOpen 
+                          ? `rotate-180 ${activeTab === 'approved' ? 'bg-emerald-100 text-emerald-600' : 'bg-indigo-100 text-indigo-600'}` 
+                          : 'bg-slate-50 text-slate-400'
+                      }`}>
                         <div className="w-8 h-8"><Icons.ChevronDown /></div>
                       </div>
                     </div>
@@ -307,7 +402,11 @@ function PdVerify() {
                   {/* Members Detail (Collapse/Expand) */}
                   <div className={`transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[8000px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                     <div className="p-4 md:p-8 bg-slate-50/30 border-t border-slate-100 space-y-8">
-                      {items.map(item => (
+                      {items.map(item => {
+                        const statusString = item.status || 'Approved';
+                        const hasRemarks = statusString.includes(':');
+                        const remarksText = hasRemarks ? statusString.substring(statusString.indexOf(':') + 1).trim() : '';
+                        return (
                         <div key={item.id} className="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 p-6 md:p-8 flex flex-col xl:flex-row gap-10 items-stretch relative hover:shadow-2xl hover:shadow-indigo-50 transition-all duration-500">
                           
                           <div className="flex-1 space-y-10">
@@ -418,57 +517,90 @@ function PdVerify() {
                           </div>
 
                           {/* Decision Sidepanel */}
-                          <div className="w-full xl:w-80 flex flex-col gap-10 bg-slate-50/30 p-8 rounded-[2rem] border border-slate-100">
-                            
-
-
-                            <div className="space-y-4">
-                              <label className="text-[11px] font-black text-slate-500 uppercase tracking-widest flex items-center justify-between">
-                                Verifier Remarks
-                                <span className="text-[9px] text-slate-300 font-bold uppercase">(Optional)</span>
-                              </label>
-                              <textarea
-                                placeholder="State any observations or reasons for your decision..."
-                                value={reasons[item.id] || ''}
-                                onChange={(e) => setReasons({...reasons, [item.id]: e.target.value})}
-                                className="w-full px-6 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-sm outline-none focus:ring-4 focus:ring-indigo-100 focus:border-indigo-400 resize-none h-full min-h-[140px] transition-all font-semibold text-slate-700 shadow-inner"
-                              />
-                            </div>
-
-                            <div className="grid grid-cols-1 gap-4">
-                              <button
-                                type="button"
-                                onClick={(e) => { e.preventDefault(); handleAction(item.id, 'approve'); }}
-                                disabled={!!actioning}
-                                className={`group/btn relative overflow-hidden py-5 rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-[11px] transition-all duration-300 shadow-2xl flex items-center justify-center gap-3 ${
-                                  actioning === item.id 
-                                    ? 'bg-slate-800 text-white cursor-not-allowed' 
-                                    : 'bg-emerald-600 text-white hover:bg-slate-900 shadow-emerald-200'
-                                }`}
-                              >
-                                <span>{actioning === item.id ? 'Processing...' : 'Final Approval'}</span>
-                                <div className={`w-4 h-4 ${actioning === item.id ? 'animate-spin' : 'group-hover/btn:scale-125 transition-transform'}`}>
-                                  {actioning === item.id ? <Icons.Loader2 /> : <Icons.CheckCircle2 />}
+                          {activeTab === 'approved' ? (
+                            <div className="w-full xl:w-80 flex flex-col justify-between bg-emerald-50/50 p-8 rounded-[2.5rem] border border-emerald-100/60 shadow-sm shadow-emerald-50 relative overflow-hidden group/side">
+                              <div className="space-y-8 relative z-10">
+                                <div className="flex items-center gap-3.5 text-emerald-600">
+                                  <div className="w-10 h-10 bg-white rounded-2xl shadow-md border border-emerald-100 flex items-center justify-center text-emerald-500 hover:scale-105 transition-transform"><Icons.CheckCircle2 /></div>
+                                  <div className="space-y-0.5">
+                                    <p className="text-[9px] font-black text-emerald-500 uppercase tracking-widest leading-none">PD Status</p>
+                                    <p className="text-lg font-black text-emerald-800 leading-none">Approved</p>
+                                  </div>
                                 </div>
-                              </button>
-                              <button 
-                                type="button"
-                                onClick={(e) => { e.preventDefault(); handleAction(item.id, 'reject'); }}
-                                disabled={!!actioning}
-                                className={`py-5 border-2 rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-[11px] transition-all duration-300 flex items-center justify-center gap-3 ${
-                                  actioning === item.id
-                                    ? 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
-                                    : 'bg-white text-rose-600 border-rose-100 hover:bg-rose-50 hover:border-rose-200'
-                                }`}
-                              >
-                                <span>Reject Record</span>
-                                <div className="w-4 h-4"><Icons.XCircle /></div>
-                              </button>
+                                
+                                {hasRemarks && (
+                                  <div className="space-y-2">
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Approval Remarks</p>
+                                    <div className="bg-white border border-emerald-100/50 p-5 rounded-2xl shadow-inner text-sm font-semibold italic text-slate-700 leading-relaxed">
+                                      "{remarksText}"
+                                    </div>
+                                  </div>
+                                )}
+
+                                <div className="space-y-2.5 bg-white/40 p-5 rounded-2xl border border-emerald-100/20">
+                                  <div className="flex justify-between items-center text-[10px] font-black uppercase text-slate-400">
+                                    <span>Verifier ID</span>
+                                    <span className="text-slate-700 font-black">{item.staffId || 'System'}</span>
+                                  </div>
+                                  <div className="h-px bg-emerald-100/30"></div>
+                                  <div className="flex justify-between items-center text-[10px] font-black uppercase text-slate-400">
+                                    <span>Verified Date</span>
+                                    <span className="text-slate-700 font-bold">{item.createdAt ? new Date(item.createdAt).toLocaleDateString() : 'N/A'}</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-emerald-100/30 rounded-full blur-3xl opacity-50 group-hover/side:scale-125 transition-transform duration-700"></div>
                             </div>
-                          </div>
+                          ) : (
+                            <div className="w-full xl:w-80 flex flex-col gap-10 bg-slate-50/30 p-8 rounded-[2rem] border border-slate-100">
+                              <div className="space-y-4">
+                                <label className="text-[11px] font-black text-slate-500 uppercase tracking-widest flex items-center justify-between">
+                                  Verifier Remarks
+                                  <span className="text-[9px] text-slate-300 font-bold uppercase">(Optional)</span>
+                                </label>
+                                <textarea
+                                  placeholder="State any observations or reasons for your decision..."
+                                  value={reasons[item.id] || ''}
+                                  onChange={(e) => setReasons({...reasons, [item.id]: e.target.value})}
+                                  className="w-full px-6 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-sm outline-none focus:ring-4 focus:ring-indigo-100 focus:border-indigo-400 resize-none h-full min-h-[140px] transition-all font-semibold text-slate-700 shadow-inner"
+                                />
+                              </div>
+
+                              <div className="grid grid-cols-1 gap-4">
+                                <button
+                                  type="button"
+                                  onClick={(e) => { e.preventDefault(); handleAction(item.id, 'approve'); }}
+                                  disabled={!!actioning}
+                                  className={`group/btn relative overflow-hidden py-5 rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-[11px] transition-all duration-300 shadow-2xl flex items-center justify-center gap-3 ${
+                                    actioning === item.id 
+                                      ? 'bg-slate-800 text-white cursor-not-allowed' 
+                                      : 'bg-emerald-600 text-white hover:bg-slate-900 shadow-emerald-200'
+                                  }`}
+                                >
+                                  <span>{actioning === item.id ? 'Processing...' : 'Final Approval'}</span>
+                                  <div className={`w-4 h-4 ${actioning === item.id ? 'animate-spin' : 'group-hover/btn:scale-125 transition-transform'}`}>
+                                    {actioning === item.id ? <Icons.Loader2 /> : <Icons.CheckCircle2 />}
+                                  </div>
+                                </button>
+                                <button 
+                                  type="button"
+                                  onClick={(e) => { e.preventDefault(); handleAction(item.id, 'reject'); }}
+                                  disabled={!!actioning}
+                                  className={`py-5 border-2 rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-[11px] transition-all duration-300 flex items-center justify-center gap-3 ${
+                                    actioning === item.id
+                                      ? 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
+                                      : 'bg-white text-rose-600 border-rose-100 hover:bg-rose-50 hover:border-rose-200'
+                                  }`}
+                                >
+                                  <span>Reject Record</span>
+                                  <div className="w-4 h-4"><Icons.XCircle /></div>
+                                </button>
+                              </div>
+                            </div>
+                          )}
 
                         </div>
-                      ))}
+                      )})}
                     </div>
                   </div>
                 </div>
