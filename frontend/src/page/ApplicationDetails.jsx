@@ -86,7 +86,7 @@ function ApplicationDetails() {
     <button onClick={() => navigate('/dashboard')} className="text-blue-600 hover:underline">Back to Dashboard</button>
   </div>;
 
-  const isActionable = !loan.status || ['pending', 'under review', 'query', 'resubmitted'].includes(loan.status.toLowerCase());
+  const isActionable = !loan.status || ['pending', 'resubmitted'].includes(loan.status.toLowerCase());
 
   const DetailItem = ({ label, value }) => (
     <div className="border-b border-gray-50 pb-3">
