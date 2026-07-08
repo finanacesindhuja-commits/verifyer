@@ -156,6 +156,7 @@ function ApplicationDetails() {
               <SectionHeader title="Personal Demographics" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
                 <DetailItem label="Full Name" value={loan.person_name || loan.member_name} />
+                <DetailItem label="CIBIL Score" value={loan.member_cibil} />
                 <DetailItem label="Date of Birth" value={loan.date_of_birth} />
                 <DetailItem label="Gender" value={loan.gender} />
                 <DetailItem label="Religion" value={loan.religion} />
