@@ -86,6 +86,8 @@ function ApplicationDetails() {
     <button onClick={() => navigate('/dashboard')} className="text-blue-600 hover:underline">Back to Dashboard</button>
   </div>;
 
+  const isActionable = !loan.status || ['pending', 'under review', 'query', 'resubmitted'].includes(loan.status.toLowerCase());
+
   const DetailItem = ({ label, value }) => (
     <div className="border-b border-gray-50 pb-3">
       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">{label}</p>
@@ -144,7 +146,7 @@ function ApplicationDetails() {
                   ) : (
                     <div className="w-32 h-32 rounded-3xl bg-gray-50 flex items-center justify-center text-gray-300 font-bold border-2 border-dashed border-gray-200">NO PHOTO</div>
                   )}
-                  {loan.member_photo_url && (
+                  {loan.member_photo_url && isActionable && (
                     <button 
                       onClick={() => handleQueryField('member_photo_url', 'Member Photo')}
                       className="text-[10px] font-bold text-rose-500 hover:text-rose-700 bg-rose-50 px-3 py-1 rounded-full border border-rose-100 transition-colors"
@@ -236,12 +238,14 @@ function ApplicationDetails() {
                           )}
                         </div>
                         <div className="flex items-center gap-3">
-                          <button 
-                            onClick={() => handleQueryField(doc.field, doc.label)}
-                            className="text-[10px] font-bold text-rose-500 hover:text-rose-700"
-                          >
-                            QUERY
-                          </button>
+                          {isActionable && (
+                            <button 
+                              onClick={() => handleQueryField(doc.field, doc.label)}
+                              className="text-[10px] font-bold text-rose-500 hover:text-rose-700"
+                            >
+                              QUERY
+                            </button>
+                          )}
                           <a href={doc.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-indigo-500 hover:text-indigo-700 underline">VIEW FULL</a>
                         </div>
                       </div>
@@ -291,7 +295,7 @@ function ApplicationDetails() {
               )}
               
               {/* Show action panel only if status is pending, under review, query, or resubmitted */}
-              {( !loan.status || ['pending', 'under review', 'query', 'resubmitted'].includes(loan.status.toLowerCase()) ) && (
+              {isActionable && (
                 <div className="space-y-6">
                   <div>
                     <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Verification Remarks</label>
