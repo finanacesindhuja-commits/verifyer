@@ -138,11 +138,21 @@ function ApplicationDetails() {
             {/* 1. Applicant Master Info */}
             <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
               <div className="flex items-start gap-8 mb-10 pb-8 border-b border-gray-50">
-                {loan.member_photo_url ? (
-                  <img src={loan.member_photo_url} alt="Applicant" className="w-32 h-32 rounded-3xl object-cover ring-8 ring-indigo-50 shadow-lg" />
-                ) : (
-                  <div className="w-32 h-32 rounded-3xl bg-gray-50 flex items-center justify-center text-gray-300 font-bold border-2 border-dashed border-gray-200">NO PHOTO</div>
-                )}
+                <div className="flex flex-col items-center gap-3">
+                  {loan.member_photo_url ? (
+                    <img src={loan.member_photo_url} alt="Applicant" className="w-32 h-32 rounded-3xl object-cover ring-8 ring-indigo-50 shadow-lg" />
+                  ) : (
+                    <div className="w-32 h-32 rounded-3xl bg-gray-50 flex items-center justify-center text-gray-300 font-bold border-2 border-dashed border-gray-200">NO PHOTO</div>
+                  )}
+                  {loan.member_photo_url && (
+                    <button 
+                      onClick={() => handleQueryField('member_photo_url', 'Member Photo')}
+                      className="text-[10px] font-bold text-rose-500 hover:text-rose-700 bg-rose-50 px-3 py-1 rounded-full border border-rose-100 transition-colors"
+                    >
+                      QUERY IMAGE
+                    </button>
+                  )}
+                </div>
                 <div className="pt-2">
                   <h2 className="text-3xl font-black text-gray-900 mb-2">{loan.person_name || loan.member_name}</h2>
                   <div className="flex flex-wrap gap-3">
