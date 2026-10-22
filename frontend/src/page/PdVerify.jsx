@@ -22,6 +22,7 @@ function PdVerify() {
   const [allData, setAllData] = useState([]);
   const [activeTab, setActiveTab] = useState('pending'); // 'pending' or 'approved'
   const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(null);
   const [reasons, setReasons] = useState({});
   const [expandedCenters, setExpandedCenters] = useState({});
   const [previewImage, setPreviewImage] = useState(null);
@@ -70,14 +71,19 @@ function PdVerify() {
 
   const fetchList = async (isAuto = false) => {
     if (isAuto) setIsRefreshing(true);
+    else setLoading(true);
+    setFetchError(null);
     try {
       const apiUrl = import.meta.env.VITE_API_URL || '';
-      const res = await axios.get(`${apiUrl}/api/verification-list`);
+      const res = await axios.get(`${apiUrl}/api/verification-list`, { timeout: 30000 });
       
       // Filter out system config rows, keep everything else
       setAllData(res.data.filter(s => s.centerId !== '__config__'));
     } catch (err) {
       console.error('Failed to fetch PD verification list:', err);
+      if (!isAuto) {
+        setFetchError(err.response?.data?.error || err.message || 'Failed to load verification list');
+      }
     } finally {
       setLoading(false);
       setIsRefreshing(false);
@@ -161,10 +167,13 @@ function PdVerify() {
   };
 
   const toggleCenter = (centerName) => {
-    setExpandedCenters(prev => ({
-      ...prev,
-      [centerName]: !prev[centerName]
-    }));
+    setExpandedCenters(prev => {
+      const current = prev[centerName] ?? (activeTab === 'pending');
+      return {
+        ...prev,
+        [centerName]: !current
+      };
+    });
   };
 
   // Filter lists based on tab
@@ -326,6 +335,20 @@ function PdVerify() {
             <div className="w-12 h-12 text-indigo-600 animate-spin"><Icons.Loader2 /></div>
             <span className="text-slate-500 font-bold tracking-widest uppercase text-xs">Accessing Database...</span>
           </div>
+        ) : fetchError ? (
+          <div className="bg-white rounded-3xl shadow-sm border border-rose-100 p-16 text-center">
+            <div className="inline-flex p-5 bg-rose-50 rounded-full mb-4 text-rose-500">
+              <div className="w-10 h-10"><Icons.XCircle /></div>
+            </div>
+            <h3 className="text-xl font-black text-slate-800 mb-2">Network / Server Issue</h3>
+            <p className="text-slate-500 text-sm font-medium mb-6">{fetchError}</p>
+            <button
+              onClick={handleManualRefresh}
+              className="px-6 py-3 bg-indigo-600 text-white rounded-2xl font-bold text-xs uppercase tracking-wider hover:bg-indigo-700 transition"
+            >
+              Retry Now
+            </button>
+          </div>
         ) : currentDisplayList.length === 0 ? (
           <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-20 text-center animate-in fade-in duration-300">
             <div className="inline-flex p-6 bg-slate-50 rounded-full mb-6 text-slate-300">
@@ -343,7 +366,7 @@ function PdVerify() {
         ) : (
           <div className="space-y-4 lg:space-y-6">
             {Object.keys(groupedList).sort().map(centerName => {
-              const isOpen = expandedCenters[centerName];
+              const isOpen = expandedCenters[centerName] ?? (activeTab === 'pending');
               const items = groupedList[centerName];
               
               return (

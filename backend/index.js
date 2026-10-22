@@ -402,30 +402,61 @@ app.post('/api/submit-pd', async (req, res) => {
 });
 
 // GET verification list from Supabase
-app.get('/api/verification-list', async (req, res) => {
+app.get('/api/verification-list', cacheMiddleware(10), async (req, res) => {
   try {
-    const { data, error } = await supabase
+    // 1. Fetch pending PD verifications first (all pending items)
+    const { data: pendingData, error: pendingErr } = await supabase
       .from('pd_verifications')
       .select('*')
+      .neq('center_id', '__config__')
+      .neq('status', 'Approved')
+      .not('status', 'ilike', 'Approved%')
+      .not('status', 'ilike', 'Rejected%')
       .order('created_at', { ascending: false });
-      
-    if (error) throw error;
-    
-    const { data: membersList } = await supabase.from('members').select('id, member_no');
-    const memberMap = {};
-    if (membersList) membersList.forEach(m => memberMap[m.id] = m.member_no);
-    
-    // Enrich with names from loans table for display
-    const enrichedList = await Promise.all(data.map(async (sub) => {
-      // Find the loan for this member/center to get the names and staff info
-      const { data: loanData } = await supabase
-        .from('loans')
-        .select('id, center_name, member_name, staff_name')
-        .eq('member_id', sub.member_id)
-        .eq('center_id', sub.center_id)
-        .limit(1);
 
-      const loan = loanData && loanData.length > 0 ? loanData[0] : null;
+    if (pendingErr) throw pendingErr;
+
+    // 2. Fetch recent approved/rejected PD verifications (limit to 30 to avoid statement timeout & 30MB payload)
+    const { data: historyData, error: historyErr } = await supabase
+      .from('pd_verifications')
+      .select('*')
+      .neq('center_id', '__config__')
+      .or('status.eq.Approved,status.ilike.Approved%,status.ilike.Rejected%')
+      .order('created_at', { ascending: false })
+      .limit(30);
+
+    if (historyErr) throw historyErr;
+
+    const data = [...(pendingData || []), ...(historyData || [])];
+    
+    // 3. Batch fetch members and loans in a single parallel query
+    const memberIds = [...new Set(data.map(d => d.member_id).filter(Boolean))];
+
+    const [membersRes, loansRes] = await Promise.all([
+      memberIds.length > 0
+        ? supabase.from('members').select('id, member_no').in('id', memberIds)
+        : { data: [] },
+      memberIds.length > 0
+        ? supabase.from('loans').select('id, center_id, member_id, center_name, member_name, staff_name').in('member_id', memberIds)
+        : { data: [] }
+    ]);
+
+    const memberMap = {};
+    (membersRes.data || []).forEach(m => {
+      memberMap[m.id] = m.member_no;
+    });
+
+    const loanMap = {};
+    (loansRes.data || []).forEach(l => {
+      loanMap[`${l.center_id}_${l.member_id}`] = l;
+      if (!loanMap[l.member_id]) {
+        loanMap[l.member_id] = l;
+      }
+    });
+    
+    // 4. Enrich records in memory
+    const enrichedList = data.map((sub) => {
+      const loan = loanMap[`${sub.center_id}_${sub.member_id}`] || loanMap[sub.member_id] || null;
 
       return {
         id: sub.id,
@@ -445,7 +476,7 @@ app.get('/api/verification-list', async (req, res) => {
         centerName: loan ? loan.center_name : `Center ${sub.center_id}`,
         memberName: loan ? loan.member_name : `Member ${sub.member_id}`
       };
-    }));
+    });
     
     res.json(enrichedList);
   } catch (err) {
@@ -517,6 +548,7 @@ app.post('/api/approve-verification', async (req, res) => {
     }
     // ----------------------------
 
+    flushCache();
     res.json({ message: 'Actioned successfully', submission: data });
   } catch (err) {
     log(`Approve/Reject Error: ${err.message}`);
