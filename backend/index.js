@@ -199,7 +199,7 @@ app.post('/api/loans/:id/verify', async (req, res) => {
         verification_remarks: remarks
       })
       .eq('id', id)
-      .select();
+      .select('id, status');
 
     if (error) {
        log(`Update failed for loan ${id}: ${error.message}`);
@@ -207,6 +207,7 @@ app.post('/api/loans/:id/verify', async (req, res) => {
     }
 
     log(`Update success for loan ${id}: ${JSON.stringify(data)}`);
+    flushCache();
     res.json(data[0]);
   } catch (err) {
     log(`Error in verification for loan ${id}: ${err.message}`);
@@ -511,7 +512,7 @@ app.post('/api/approve-verification', async (req, res) => {
       .from('pd_verifications')
       .update(updateData)
       .eq('id', submissionId)
-      .select()
+      .select('id, center_id, member_id, status, pd_verified, loan_verified, staff_id, created_at')
       .single();
       
     if (error) throw error;
@@ -536,7 +537,7 @@ app.post('/api/approve-verification', async (req, res) => {
           center_id: targetCenterId
         })
         .or('status.eq.PENDING,status.eq.pending,status.eq.READY FOR PD,status.eq.Pending PD Verification') // Target the active loan
-        .select();
+        .select('id, status');
       
       if (loanUpdateError) {
         log(`❌ Sync Failed: ${loanUpdateError.message}`);

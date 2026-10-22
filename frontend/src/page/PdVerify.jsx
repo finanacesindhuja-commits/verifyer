@@ -143,25 +143,48 @@ function PdVerify() {
 
   const handleAction = async (submissionId, action) => {
     setActioning(submissionId);
+    const reasonText = reasons[submissionId] || '';
+
+    // 1. Optimistic UI update: Instantly update the item in state so UI responds in 0ms
+    setAllData(prev => prev.map(item => {
+      if (item.id === submissionId) {
+        return {
+          ...item,
+          pdVerified: action !== 'reject',
+          status: action === 'reject'
+            ? (reasonText ? `Rejected: ${reasonText}` : 'Rejected')
+            : (reasonText ? `Approved: ${reasonText}` : 'Approved')
+        };
+      }
+      return item;
+    }));
+
     try {
       const apiUrl = import.meta.env.VITE_API_URL || '';
       await axios.post(`${apiUrl}/api/approve-verification`, {
         submissionId,
         type: 'pd',
         action,
-        reason: reasons[submissionId] || ''
+        reason: reasonText
       });
-      await fetchList();
-      window.dispatchEvent(new CustomEvent('refresh-stats'));
+      
+      // Clear actioning immediately so user is never blocked
+      setActioning(null);
+      
       setReasons(prev => {
         const next = { ...prev };
         delete next[submissionId];
         return next;
       });
+
+      window.dispatchEvent(new CustomEvent('refresh-stats'));
+      
+      // Background silent refresh (non-blocking)
+      fetchList(true);
     } catch (err) {
       console.error(`Error actioning PD:`, err);
-      alert('Action failed. Please try again.');
-    } finally {
+      alert('Action failed. Reverting changes.');
+      await fetchList();
       setActioning(null);
     }
   };
