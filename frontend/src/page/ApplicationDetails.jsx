@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import { API_URL } from '../api';
 
 function ApplicationDetails() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ function ApplicationDetails() {
   const [submitting, setSubmitting] = useState(false);
   const [remarks, setRemarks] = useState('');
 
-  const apiUrl = import.meta.env.VITE_API_URL || '';
+  const apiUrl = API_URL;
 
   useEffect(() => {
     fetchLoanDetails();

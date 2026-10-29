@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
+import { API_URL } from '../api';
 
 function Sidebar({ children }) {
   const { user, logout } = useAuth();
@@ -31,8 +32,7 @@ function Sidebar({ children }) {
 
   const fetchStats = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || '';
-      const res = await axios.get(`${apiUrl}/api/stats`);
+      const res = await axios.get(`${API_URL}/api/stats`);
       setStats(res.data);
     } catch (err) {
       console.error('Failed to fetch stats:', err);

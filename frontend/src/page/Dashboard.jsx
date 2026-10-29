@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../api';
 
 const AUTO_REFRESH_SECONDS = 30;
 
@@ -48,8 +49,7 @@ function Dashboard() {
     if (isAuto) setIsRefreshing(true);
     else setLoading(true);
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || '';
-      const res = await axios.get(`${apiUrl}/api/loans`);
+      const res = await axios.get(`${API_URL}/api/loans`);
       setLoans(res.data);
     } catch (err) {
       console.error('Failed to fetch loans:', err);
