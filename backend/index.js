@@ -13,10 +13,14 @@ const upload = multer({ storage: multer.memoryStorage() });
 const logFile = path.join(__dirname, 'server_log.txt');
 const log = (msg) => {
   const t = new Date().toISOString();
-  fs.appendFileSync(logFile, `[${t}] ${msg}\n`);
+  try {
+    fs.appendFileSync(logFile, `[${t}] ${msg}\n`);
+  } catch (e) {}
   console.log(msg);
 };
-fs.appendFileSync(logFile, `\n--- Starting server at ${new Date().toISOString()} ---\n`);
+try {
+  fs.appendFileSync(logFile, `\n--- Starting server at ${new Date().toISOString()} ---\n`);
+} catch (e) {}
 
 const app = express();
 
